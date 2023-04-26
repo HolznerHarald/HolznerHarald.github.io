@@ -1,0 +1,25 @@
+﻿
+    div {
+           display: flex;
+        }
+    p{
+        margin:30px;
+    }
+    #Naechsterbutton{
+        visibility:hidden;
+    }
+#tWurf {
+    width: 80%;
+    max-width:700px;
+  
+}
+#tZettel td {
+    border-style: solid; 
+}
+#tWurf td {
+    border-style: solid;
+    width: 20%;
+}
+#Nachricht {
+    border-style: solid;
+}

@@ -1,1 +1,104 @@
-Hello World
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>
+        Meine erstes Würfelprogramm
+    </title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Harald Holzner">
+    <link rel="stylesheet" href="wurf1.css" />
+    
+</head>
+<body>
+    <script src="ss.js"></script>
+    <button id="Startbutton" type="button" onclick="Start()">Start</button>
+    <button id="Naechsterbutton" type="button" onclick="nextbutton()">nächster Wurf</button>
+
+    <p id="Anz1">Anzahl Würfe:0</p>
+    <p id="Anz2">Anzahl im Wurf:0</p>
+
+    <table id="tWurf">
+        <tr>
+            <td onclick="tWurfclick(1)">1</td>
+            <td onclick="tWurfclick(2)">2</td>
+            <td onclick="tWurfclick(3)">3</td>
+            <td onclick="tWurfclick(4)">4</td>
+            <td onclick="tWurfclick(5)">5</td>
+        </tr>
+        <tr>
+            <td onclick="tWurfclick(1)">11</td>
+            <td onclick="tWurfclick(2)">22</td>
+            <td onclick="tWurfclick(3)">33</td>
+            <td onclick="tWurfclick(4)">44</td>
+            <td onclick="tWurfclick(5)">55</td>
+        </tr>
+    </table>
+
+    <button id="Nachricht" type="button">Klick auf Start-Button um Spiel zu starten !</button>
+
+    <table id="tZettel">
+        <tr>
+            <td onclick="feldclick(1)">NNN</td>
+        </tr>
+        <tr>
+            <td onclick="feldclick(2)">NNN</td>
+        </tr>
+        <tr>
+            <td onclick="feldclick(3)">NNN</td>
+        </tr>
+        <tr>
+            <td onclick="feldclick(4)">NNN</td>
+        </tr>
+        <tr>
+            <td onclick="feldclick(5)">NNN</td>
+        </tr>
+        <tr>
+            <td onclick="feldclick(6)">NNN</td>
+        </tr>
+        <tr>
+            <td onclick="feldclick(7)">NNN</td>
+        </tr>
+        <tr>
+            <td onclick="feldclick(8)">NNN</td>
+        </tr>
+        <tr>
+            <td onclick="feldclick(9)">NNN</td>
+        </tr>
+        <tr>
+            <td onclick="feldclick(10)">NNN</td>
+        </tr>
+        <tr>
+            <td onclick="feldclick(11)">NNN</td>
+        </tr>
+        <tr>
+            <td onclick="feldclick(12)">NNN</td>
+        </tr>
+        <tr>
+            <td onclick="feldclick(13)">NNN</td>
+        </tr>
+    </table>
+    <button id="Ergebnis" type="button"></button>
+
+    <script>
+        /* so gehts
+        let t = document.getElementById("tWurf");
+        let trs = t.getElementsByTagName("tr");
+        let tds = trs[0].getElementsByTagName("td");
+        tds[3].innerText = 33333;*/
+        /* so auch
+        document.write(document.getElementById("tWurf").children.item(0).children.item(1).children.item(0).innerHTML)*/
+        /* und so auch
+        document.write(document.getElementById("tWurf").children[0].children[0].children[0].innerHTML)*/
+
+        let t
+        let trs
+        let tds
+        let tds0
+        let glAnz1 = 0
+        let glAnz2 = 0
+        let ZahlenAnzahl = [0, 0, 0, 0, 0, 0]
+        init();
+
+    </script>
+</body>
+</html>
