@@ -10,95 +10,208 @@
     
 </head>
 <body>
-    <script src="ss.js"></script>
-    <button id="Startbutton" type="button" onclick="Start()">Start</button>
-    <button id="Naechsterbutton" type="button" onclick="nextbutton()">nächster Wurf</button>
+    <div id="container">
+        <script src="ss.js"></script>
 
-    <p id="Anz1">Anzahl Würfe:0</p>
-    <p id="Anz2">Anzahl im Wurf:0</p>
+        <div id="middle">
+            <p id="Anz2">0.Wurf</p>
+            <table id="tWurf">
+                <tr id="ZReihe">
+                    <td onclick="tWurfclick(1)">1</td>
+                    <td onclick="tWurfclick(2)">2</td>
+                    <td onclick="tWurfclick(3)">3</td>
+                    <td onclick="tWurfclick(4)">4</td>
+                    <td onclick="tWurfclick(5)">5</td>
+                </tr>
+                <tr id="FReihe">
+                    <td onclick="tWurfclick(1)">11</td>
+                    <td onclick="tWurfclick(2)">22</td>
+                    <td onclick="tWurfclick(3)">33</td>
+                    <td onclick="tWurfclick(4)">44</td>
+                    <td onclick="tWurfclick(5)">55</td>
+                </tr>
+            </table>
+            <button id="Naechsterbutton" type="button" onclick="nextbutton()">Start</button>
+        </div>
+        <div id="Infos">
+            <p id="Anz1">Gesamtanzahl Würfe:0</p>
+            <p id="Servieren">serviert</p>
 
-    <table id="tWurf">
-        <tr>
-            <td onclick="tWurfclick(1)">1</td>
-            <td onclick="tWurfclick(2)">2</td>
-            <td onclick="tWurfclick(3)">3</td>
-            <td onclick="tWurfclick(4)">4</td>
-            <td onclick="tWurfclick(5)">5</td>
-        </tr>
-        <tr>
-            <td onclick="tWurfclick(1)">11</td>
-            <td onclick="tWurfclick(2)">22</td>
-            <td onclick="tWurfclick(3)">33</td>
-            <td onclick="tWurfclick(4)">44</td>
-            <td onclick="tWurfclick(5)">55</td>
-        </tr>
-    </table>
+            <div id="Testen">
+                <button id="Anleitung" type="button" onclick="alert(decodeURI('W%C3%BCrfel-Poker mit 5 Spalten:  In die Felder kann in beliebiger Reihenfolge eingetragen werden, mit Ausnahme der 1. und 5.Spalte. Die 1. muss von oben der Reihe nach befüllt werden, die 5. von unten . Bei servierte Figuren zählt jeder Eintrag doppelt, auch in den oberen Feldern. Wenn man in einer Spalte in den oberen 5 Feldern 70 Punkte erreicht bekommt man 45 Zusatzpunkte, in den Randspalten 60.'))">Anleitung</button>
+                <button id="Teste: 58 Wuerfe" type="button" onclick="next58()">teste 58 Wuerfe</button>
 
-    <button id="Nachricht" type="button">Klick auf Start-Button um Spiel zu starten !</button>
+                <p id="wei"></p>
+                <p id="hei"></p>
+            </div>
+        </div>
+        <p id="Nachricht" type="button">Klick auf Start-Button um Spiel zu starten !</p>
 
-    <table id="tZettel">
-        <tr>
-            <td onclick="feldclick(1)">NNN</td>
-        </tr>
-        <tr>
-            <td onclick="feldclick(2)">NNN</td>
-        </tr>
-        <tr>
-            <td onclick="feldclick(3)">NNN</td>
-        </tr>
-        <tr>
-            <td onclick="feldclick(4)">NNN</td>
-        </tr>
-        <tr>
-            <td onclick="feldclick(5)">NNN</td>
-        </tr>
-        <tr>
-            <td onclick="feldclick(6)">NNN</td>
-        </tr>
-        <tr>
-            <td onclick="feldclick(7)">NNN</td>
-        </tr>
-        <tr>
-            <td onclick="feldclick(8)">NNN</td>
-        </tr>
-        <tr>
-            <td onclick="feldclick(9)">NNN</td>
-        </tr>
-        <tr>
-            <td onclick="feldclick(10)">NNN</td>
-        </tr>
-        <tr>
-            <td onclick="feldclick(11)">NNN</td>
-        </tr>
-        <tr>
-            <td onclick="feldclick(12)">NNN</td>
-        </tr>
-        <tr>
-            <td onclick="feldclick(13)">NNN</td>
-        </tr>
-    </table>
-    <button id="Ergebnis" type="button"></button>
+        <table id="tZettel">
 
-    <script>
-        /* so gehts
-        let t = document.getElementById("tWurf");
-        let trs = t.getElementsByTagName("tr");
-        let tds = trs[0].getElementsByTagName("td");
-        tds[3].innerText = 33333;*/
-        /* so auch
-        document.write(document.getElementById("tWurf").children.item(0).children.item(1).children.item(0).innerHTML)*/
-        /* und so auch
-        document.write(document.getElementById("tWurf").children[0].children[0].children[0].innerHTML)*/
+            <tr>
+                <td>1</td>
+                <td onclick="feldclick(1,0)">NNN</td>
+                <td onclick="feldclick(1,1)">NNN</td>
+                <td onclick="feldclick(1,2)">NNN</td>
+                <td onclick="feldclick(1,3)">NNN</td>
+                <td onclick="feldclick(1,4)">NNN</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td onclick="feldclick(2,0)">NNN</td>
+                <td onclick="feldclick(2,1)">NNN</td>
+                <td onclick="feldclick(2,2)">NNN</td>
+                <td onclick="feldclick(2,3)">NNN</td>
+                <td onclick="feldclick(2,4)">NNN</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td onclick="feldclick(3,0)">NNN</td>
+                <td onclick="feldclick(3,1)">NNN</td>
+                <td onclick="feldclick(3,2)">NNN</td>
+                <td onclick="feldclick(3,3)">NNN</td>
+                <td onclick="feldclick(3,4)">NNN</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td onclick="feldclick(4,0)">NNN</td>
+                <td onclick="feldclick(4,1)">NNN</td>
+                <td onclick="feldclick(4,2)">NNN</td>
+                <td onclick="feldclick(4,3)">NNN</td>
+                <td onclick="feldclick(4,4)">NNN</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td onclick="feldclick(5,0)">NNN</td>
+                <td onclick="feldclick(5,1)">NNN</td>
+                <td onclick="feldclick(5,2)">NNN</td>
+                <td onclick="feldclick(5,3)">NNN</td>
+                <td onclick="feldclick(5,4)">NNN</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td onclick="feldclick(6,0)">NNN</td>
+                <td onclick="feldclick(6,1)">NNN</td>
+                <td onclick="feldclick(6,2)">NNN</td>
+                <td onclick="feldclick(6,3)">NNN</td>
+                <td onclick="feldclick(6,4)">NNN</td>
+            </tr>
+            <tr>
+                <td>Summe:</td>
+                <td onclick="feldclick(7,0)">NNN</td>
+                <td onclick="feldclick(7,1)">NNN</td>
+                <td onclick="feldclick(7,2)">NNN</td>
+                <td onclick="feldclick(7,3)">NNN</td>
+                <td onclick="feldclick(7,4)">NNN</td>
+                <td>NNN</td>
+            </tr>
+            <tr>
+                <td>Minimum</td>
+                <td onclick="feldclick(8,0)">NNN</td>
+                <td onclick="feldclick(8,1)">NNN</td>
+                <td onclick="feldclick(8,2)">NNN</td>
+                <td onclick="feldclick(8,3)">NNN</td>
+                <td onclick="feldclick(8,4)">NNN</td>
+                <td>NNN</td>
+            </tr>
+            <tr>
+                <td>Maximum</td>
+                <td onclick="feldclick(9,0)">NNN</td>
+                <td onclick="feldclick(9,1)">NNN</td>
+                <td onclick="feldclick(9,2)">NNN</td>
+                <td onclick="feldclick(9,3)">NNN</td>
+                <td onclick="feldclick(9,4)">NNN</td>
+                <td>NNN</td>
+            </tr>
+            <tr>
+                <td>Full</td>
+                <td onclick="feldclick(10,0)">NNN</td>
+                <td onclick="feldclick(10,1)">NNN</td>
+                <td onclick="feldclick(10,2)">NNN</td>
+                <td onclick="feldclick(10,3)">NNN</td>
+                <td onclick="feldclick(10,4)">NNN</td>
+                <td>NNN</td>
+            </tr>
+            <tr>
+                <td>Strret</td>
+                <td onclick="feldclick(11,0)">NNN</td>
+                <td onclick="feldclick(11,1)">NNN</td>
+                <td onclick="feldclick(11,2)">NNN</td>
+                <td onclick="feldclick(11,3)">NNN</td>
+                <td onclick="feldclick(11,4)">NNN</td>
+                <td>NNN</td>
+            </tr>
+            <tr>
+                <td>Poker</td>
+                <td onclick="feldclick(12,0)">NNN</td>
+                <td onclick="feldclick(12,1)">NNN</td>
+                <td onclick="feldclick(12,2)">NNN</td>
+                <td onclick="feldclick(12,3)">NNN</td>
+                <td onclick="feldclick(12,4)">NNN</td>
+                <td>NNN</td>
+            </tr>
+            <tr>
+                <td>Grande</td>
+                <td onclick="feldclick(13,0)">NNN</td>
+                <td onclick="feldclick(13,1)">NNN</td>
+                <td onclick="feldclick(13,2)">NNN</td>
+                <td onclick="feldclick(13,3)">NNN</td>
+                <td onclick="feldclick(13,4)">NNN</td>
+                <td>NNN</td>
+            </tr>
+            <tr>
+        </table>
+        <p id="Ergebnis" type="button"></p>
 
-        let t
-        let trs
-        let tds
-        let tds0
-        let glAnz1 = 0
-        let glAnz2 = 0
-        let ZahlenAnzahl = [0, 0, 0, 0, 0, 0]
-        init();
+        <script>
+            /* so gehts
+            let t = document.getElementById("tWurf");
+            let trs = t.getElementsByTagName("tr");
+            let tds = trs[0].getElementsByTagName("td");
+            tds[3].innerText = 33333;*/
+            /* so auch
+            document.write(document.getElementById("tWurf").children.item(0).children.item(1).children.item(0).innerHTML)*/
+            /* und so auch
+            document.write(document.getElementById("tWurf").children[0].children[0].children[0].innerHTML)*/
+            let hoehe = window.innerHeight;
+            let Weite = window.innerWidth;
+            document.getElementById("wei").innerText = "W:" + Weite;
+            document.getElementById("hei").innerText = "H:" + hoehe;
 
-    </script>
+            let t
+            let trs
+            let tds
+            let tds0
+            let glAnz1 = 0
+            let glAnz2 = 0
+            let ZahlenAnzahl = [0, 0, 0, 0, 0, 0]
+            //document.getElementById("tZettel").style.fontSize = hhF;
+            let hhF = hoehe / 35 + "px";
+            document.getElementsByTagName('body')[0].style.fontSize = hhF;
+            document.getElementsByTagName('button')[0].style.fontSize = hhF;
+            document.getElementsByTagName('button')[1].style.fontSize = hhF;
+            document.getElementsByTagName('button')[2].style.fontSize = hhF;
+            let hhF2 = hoehe / 10 + "px";
+            document.getElementById('ZReihe').style.fontSize = hhF2;
+            let hhF3 = hoehe / 20 + "px";
+            document.getElementById('Naechsterbutton').style.fontSize = hhF3;
+            document.getElementById('Anz2').style.fontSize = hhF3;
+            if (Weite >= 768) {
+                Weite = Weite * 0.7;
+            }
+            hhF4 = Weite / 8 + "px";
+           //document.getElementById('tWurf').style.innerWidth = hhF4;
+            //document.getElementById('Anz2').style.innerWidth = hhF4;
+            for (let ii = 0; ii < document.getElementsByTagName('td').length; ii++) {
+                document.getElementsByTagName('td')[ii].style.minWidth= hhF4;
+            }
+            
+            //style = "min-width:500px"
+            init();
+            init2();
+
+        </script>
+    </div>
 </body>
 </html>
