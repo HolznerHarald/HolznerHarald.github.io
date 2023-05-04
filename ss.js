@@ -30,6 +30,10 @@ function initNurEinmal() {
     for (let ii = 1; ii < 6; ii++) {      
         tds0[ii].style.height = hh;
     }
+    let hh1 = hoehe / 25 + "px";
+    for (let ii = 0; ii < 14; ii++) {
+        document.getElementById("tZettel").children[0].children[ii].style.height = hh1;
+    }
     initAlle60();
     initGrau()
     glAnz2 = 0;

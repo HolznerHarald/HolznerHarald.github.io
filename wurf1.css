@@ -1,5 +1,5 @@
 ﻿#Testen{
-    display:none;
+    /*display:none;*/
 }
 
 p {
@@ -32,7 +32,7 @@ p {
     width: 14%;
 }
 #tZettel {
-   width: 100%;
+   width: 100%;   
 }
 #tZettel td {
     width: 14%;
