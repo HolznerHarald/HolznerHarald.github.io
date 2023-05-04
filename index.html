@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
     <title>
-        Meine erstes Würfelprogramm
+        V1.0 Würfelprogramm
     </title>
     <meta charset="UTF-8">
     <meta name="author" content="Harald Holzner">
@@ -12,43 +12,41 @@
 <body>
     <div id="container">
         <script src="ss.js"></script>
-
-        <div id="middle">
-            <p id="Anz2">0.Wurf</p>
-            <table id="tWurf">
+        <p id="Nachricht" type="button">Würfelpoker:Klick auf Start-Button um Spiel zu starten !</p>
+        <table id="tWurf">
                 <tr id="ZReihe">
+                    <td id="Anz2">0.</td>
                     <td onclick="tWurfclick(1)">1</td>
                     <td onclick="tWurfclick(2)">2</td>
                     <td onclick="tWurfclick(3)">3</td>
                     <td onclick="tWurfclick(4)">4</td>
                     <td onclick="tWurfclick(5)">5</td>
+                    <td id="Naechsterbutton" onclick="nextbutton()">Start</td>
                 </tr>
                 <tr id="FReihe">
+                    <td></td>
                     <td onclick="tWurfclick(1)">11</td>
                     <td onclick="tWurfclick(2)">22</td>
                     <td onclick="tWurfclick(3)">33</td>
                     <td onclick="tWurfclick(4)">44</td>
                     <td onclick="tWurfclick(5)">55</td>
+                    <td></td>
                 </tr>
-            </table>
-            <button id="Naechsterbutton" type="button" onclick="nextbutton()">Start</button>
-        </div>
+        </table>
         <div id="Infos">
             <p id="Anz1">Gesamtanzahl Würfe:0</p>
             <p id="Servieren">serviert</p>
+            <button id="Anleitung" type="button" onclick="alert(decodeURI('W%C3%BCrfel-Poker mit 5 Spalten:  In die Felder kann in beliebiger Reihenfolge eingetragen werden, mit Ausnahme der 1. und 5.Spalte. Die 1. muss von oben der Reihe nach befüllt werden, die 5. von unten . Bei servierte Figuren zählt jeder Eintrag doppelt, auch in den oberen Feldern. Wenn man in einer Spalte in den oberen 5 Feldern 70 Punkte erreicht bekommt man 45 Zusatzpunkte, in den Randspalten 60.'))">Anleitung</button>
+            <button id="Neustart" type="button" onclick="Neustart()">Neustart</button>
 
             <div id="Testen">
-                <button id="Anleitung" type="button" onclick="alert(decodeURI('W%C3%BCrfel-Poker mit 5 Spalten:  In die Felder kann in beliebiger Reihenfolge eingetragen werden, mit Ausnahme der 1. und 5.Spalte. Die 1. muss von oben der Reihe nach befüllt werden, die 5. von unten . Bei servierte Figuren zählt jeder Eintrag doppelt, auch in den oberen Feldern. Wenn man in einer Spalte in den oberen 5 Feldern 70 Punkte erreicht bekommt man 45 Zusatzpunkte, in den Randspalten 60.'))">Anleitung</button>
+                <button id="Testzahlen" type="button" onclick="Testzahlen()">Testzahlen</button>
                 <button id="Teste: 58 Wuerfe" type="button" onclick="next58()">teste 58 Wuerfe</button>
-
                 <p id="wei"></p>
                 <p id="hei"></p>
             </div>
         </div>
-        <p id="Nachricht" type="button">Klick auf Start-Button um Spiel zu starten !</p>
-
         <table id="tZettel">
-
             <tr>
                 <td>1</td>
                 <td onclick="feldclick(1,0)">NNN</td>
@@ -161,56 +159,30 @@
                 <td>NNN</td>
             </tr>
             <tr>
+                <td style="visibility:hidden">Grande</td>
+                <td style="visibility:hidden">Grande</td>
+                <td style="visibility:hidden">Grande</td>
+                <td style="visibility:hidden">Grande</td>
+                <td style="visibility:hidden">Grande</td>
+                <td style="background:red">Ergebnis:</td>
+                <td id="Ergebnis" style="background:red">1111</td>
+            </tr>
         </table>
-        <p id="Ergebnis" type="button"></p>
+      
+        <script>     
+            let t; let trs; let tds; let tds0;
+            let glAnz1 = 0; let glAnz2 = 0; let ZahlenAnzahl = [0, 0, 0, 0, 0, 0];
 
-        <script>
-            /* so gehts
-            let t = document.getElementById("tWurf");
-            let trs = t.getElementsByTagName("tr");
-            let tds = trs[0].getElementsByTagName("td");
-            tds[3].innerText = 33333;*/
-            /* so auch
-            document.write(document.getElementById("tWurf").children.item(0).children.item(1).children.item(0).innerHTML)*/
-            /* und so auch
-            document.write(document.getElementById("tWurf").children[0].children[0].children[0].innerHTML)*/
             let hoehe = window.innerHeight;
             let Weite = window.innerWidth;
             document.getElementById("wei").innerText = "W:" + Weite;
             document.getElementById("hei").innerText = "H:" + hoehe;
-
-            let t
-            let trs
-            let tds
-            let tds0
-            let glAnz1 = 0
-            let glAnz2 = 0
-            let ZahlenAnzahl = [0, 0, 0, 0, 0, 0]
-            //document.getElementById("tZettel").style.fontSize = hhF;
-            let hhF = hoehe / 35 + "px";
-            document.getElementsByTagName('body')[0].style.fontSize = hhF;
-            document.getElementsByTagName('button')[0].style.fontSize = hhF;
-            document.getElementsByTagName('button')[1].style.fontSize = hhF;
-            document.getElementsByTagName('button')[2].style.fontSize = hhF;
-            let hhF2 = hoehe / 10 + "px";
-            document.getElementById('ZReihe').style.fontSize = hhF2;
-            let hhF3 = hoehe / 20 + "px";
-            document.getElementById('Naechsterbutton').style.fontSize = hhF3;
-            document.getElementById('Anz2').style.fontSize = hhF3;
-            if (Weite >= 768) {
-                Weite = Weite * 0.7;
+            if (hoehe < Weite) {
+                document.getElementById("container").style.width = "70%";
+                document.getElementById("container").style.margin = "auto";
             }
-            hhF4 = Weite / 8 + "px";
-           //document.getElementById('tWurf').style.innerWidth = hhF4;
-            //document.getElementById('Anz2').style.innerWidth = hhF4;
-            for (let ii = 0; ii < document.getElementsByTagName('td').length; ii++) {
-                document.getElementsByTagName('td')[ii].style.minWidth= hhF4;
-            }
-            
-            //style = "min-width:500px"
-            init();
-            init2();
 
+            initNurEinmal();
         </script>
     </div>
 </body>

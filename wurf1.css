@@ -1,62 +1,56 @@
-﻿p{
-    background:grey;
+﻿#Testen{
+    display:none;
+}
+
+p {
+    background: grey;
 }
 #Infos p {
     display: inline;
-    /*margin: 30px;*/
-}
-#Anz2 {
-    display: inline;
-    max-width: 16%;
-    border: solid;
-    background: #CDCDCD;
-}
-#tWurf {
-    width: 100%;
-    display: inline;   
 }
 #tWurf td {
         border-style: solid;
-        width: 20%;
         background: #00FFFF;
-        /*height: 100px;*/
-        /* font-size:70px;*/
 }
+
 #Naechsterbutton {
-    width: 14%;
-    background: red;
-    float: right;
+    background: red;  
 }
 #Anz1 {
-   border: solid;
+    border: solid;
+}
+#Anz2 {
+    background: #CDCDCD;
 }
 #Servieren {
     border: solid;
 }
-Servieren
-#tZettel {
+#tWurf {
     width: 100%;
-
+}
+#tWurf td{
+    width: 14%;
+}
+#tZettel {
+   width: 100%;
+}
+#tZettel td {
+    width: 14%;
 }
 #Testen {
     float: right;
 }
 #tZettel td {
     border-style: solid;
-    width: 14%;
+   
 }
 #Nachricht {
     border-style: solid;
     background: yellow;
 }
-#Ergebnis {
-    border: solid;
-    background: red;
-    float: right;
-}
 @media only screen and (min-width: 768px) {
     #container {
-    width: 70%;
-    margin: auto;
+    /*width: 70%;
+    margin: auto;*/
     }
 }
