@@ -33,7 +33,7 @@ function initNurEinmal() {
     let hh1;
     if (hoehe < Weite)
        hh1 = hoehe / 25 + "px";
-    else hh1 = hoehe / 15 + "px";
+    else hh1 = hoehe / 20 + "px";
 
     for (let ii = 0; ii < 14; ii++) {
         document.getElementById("tZettel").children[0].children[ii].style.height = hh1;
