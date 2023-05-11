@@ -73,7 +73,7 @@ function initAlle60() {
         for (let jj = 0; jj < 13; jj++) {
             document.getElementById("tZettel").children[0].children[jj].children[ii].innerHTML = "NNN";
             if ((ii == 1 && jj > 0) || (ii == 5 && jj < 12))
-                document.getElementById("tZettel").children[0].children[jj].children[ii].style.background = "grey";
+                document.getElementById("tZettel").children[0].children[jj].children[ii].style.background = "#D3D3D3";
             else
                 document.getElementById("tZettel").children[0].children[jj].children[ii].style.background = "white";
         }
@@ -100,10 +100,10 @@ function Neustart() {
 }
 function Testzahlen() {
     tds0[1].innerHTML = 2;
-    tds0[2].innerHTML = 2;
-    tds0[3].innerHTML = 3;
-    tds0[4].innerHTML = 3;
-    tds0[5].innerHTML = 3;
+    tds0[2].innerHTML = 6;
+    tds0[3].innerHTML = 6;
+    tds0[4].innerHTML = 6;
+    tds0[5].innerHTML = 6;
 }
 function nextbutton() {
     if (document.getElementById("Naechsterbutton").style.background != "red") {
@@ -116,10 +116,11 @@ function nextbutton() {
         document.getElementById("Nachricht").innerHTML = decodeURI("Ergebnis schreiben oder einzelne W%C3%BCrfe fixieren oder n%C3%A4chster Wurf");
         nextthrow();
     }    
-    else if (Anz2 == 3)
+    else if (glAnz2 == 3 || glAnz2 == 0 )
         nextthrow();
     else
         nextsubthrow();
+    
 }
 function nextthrow() {
     document.getElementById("Servieren").innerHTML = "serviert";
@@ -134,6 +135,7 @@ function nextthrow() {
         tds[ii].style.background = "#00FFFF";
         tds0[ii].innerHTML = rand();
     }
+    BestimmeZahlenAnzahl();
 }
 function nextsubthrow() {
     glAnz2++;
@@ -152,7 +154,7 @@ function nextsubthrow() {
         document.getElementById("Servieren").innerHTML = "serviert";
     else
         document.getElementById("Servieren").innerHTML = "nicht serviert";
-    
+    BestimmeZahlenAnzahl();
 }
 function rand() {  
     let zz = Math.floor(Math.random() * 6) + 1;
@@ -163,6 +165,11 @@ function feldclick(rnr, snr) {
         alert('Zuerst Start anklicken!');
         return;
     }
+    if (glAnz2 == 0) {
+        alert('Zuerst naechsten Wurf starten!');
+        return;
+    }
+    glAnz2
     snr++;
     if (document.getElementById("tZettel").children[0].children[rnr - 1].children[snr].innerHTML == "NNN" &&
         document.getElementById("tZettel").children[0].children[rnr - 1].children[snr].style.background == "grey") {        
@@ -189,6 +196,7 @@ function feldclick(rnr, snr) {
     let Servierungsfaktor = 1;
     BestimmeZahlenAnzahl();
     let fig = figur();
+    document.getElementById("bestimme").innerText += fig;
  
     if (fig != "nix" && document.getElementById("Servieren").innerHTML == "serviert")
         Servierungsfaktor = 2;
@@ -271,10 +279,13 @@ function feldclick(rnr, snr) {
         document.getElementById("tZettel").children[0].children[13].children[6].style.visibility = "visible";
         document.getElementById("Ergebnis").innerHTML = Summe;
         initGrau();
-        
+
     }
-    else
-        nextthrow();
+    else {
+        glAnz2 = 0;
+        document.getElementById("Anz2").innerHTML = glAnz2 + ".Wurf";
+        //       nextthrow();
+    }
     
     //  document.getElementById(rnr).style.background = "red";
 }
@@ -285,7 +296,7 @@ function figur() {
     let dreier = false;
     let zweier = false;
     let possibleStreet = true;
-    for (let ii = 0; ii < 5; ii++) {
+    for (let ii = 0; ii < 6; ii++) {
         if (ZahlenAnzahl[ii] > 1)
             possibleStreet = false;
 
@@ -310,9 +321,13 @@ function figur() {
 }
 function BestimmeZahlenAnzahl() {
     for (let ii = 0; ii < 6; ii++)
-        ZahlenAnzahl[ii] = 0
+        ZahlenAnzahl[ii] = 0;
     for (let ii = 1; ii < 6; ii++)
-        ZahlenAnzahl[tds0[ii].innerHTML-1]++;
+        ZahlenAnzahl[tds0[ii].innerHTML - 1]++;
+    let hs = "";
+    for (let ii = 0; ii < 6; ii++)
+        hs = hs + ZahlenAnzahl[ii];
+    document.getElementById("bestimme").innerText = hs;    
 }
 
 function tWurfclick(num) {

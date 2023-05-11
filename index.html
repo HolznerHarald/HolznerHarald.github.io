@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
     <title>
-        V1.6 Würfelprogramm
+        V1.7 Würfelprogramm
     </title>
     <meta charset="UTF-8">
     <meta name="author" content="Harald Holzner">
@@ -16,11 +16,11 @@
         <table id="tWurf">
                 <tr id="ZReihe">
                     <td id="Anz2">0.</td>
-                    <td onclick="tWurfclick(1)">1</td>
-                    <td onclick="tWurfclick(2)">2</td>
-                    <td onclick="tWurfclick(3)">3</td>
-                    <td onclick="tWurfclick(4)">4</td>
-                    <td onclick="tWurfclick(5)">5</td>
+                    <td onclick="tWurfclick(1)">0</td>
+                    <td onclick="tWurfclick(2)">0</td>
+                    <td onclick="tWurfclick(3)">0</td>
+                    <td onclick="tWurfclick(4)">0</td>
+                    <td onclick="tWurfclick(5)">0</td>
                     <td id="Naechsterbutton" onclick="nextbutton()">Start</td>
                 </tr>
                 <tr id="FReihe">
@@ -40,6 +40,7 @@
             <button id="Neustart" type="button" onclick="Neustart()">Neustart</button>
 
             <div id="Testen">
+                <p id="bestimme"></p>
                 <button id="Testzahlen" type="button" onclick="Testzahlen()">Testzahlen</button>
                 <button id="Teste: 58 Wuerfe" type="button" onclick="next58()">teste 58 Wuerfe</button>
                 <p id="wei"></p>
