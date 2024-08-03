@@ -1,0 +1,46 @@
+﻿.l1 {
+    color: blue;    
+}
+
+#p1 { /*Comment*/
+    overflow-y: scroll;
+    overflow-x: scroll;
+    background-color: lightgray; 
+}
+
+#myLinks {
+    background-color: blue;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
+    z-index: 2;
+}
+#ctest {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#ic1 {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+
+#ic2 {    
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+a {
+    z-index: 2;
+    background-color: blue;
+    display: block;
+    text-decoration: none;
+    color: white;
+}

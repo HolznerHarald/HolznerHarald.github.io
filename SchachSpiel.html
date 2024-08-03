@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>
+        Schach spielen
+    </title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Harald Holzner">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="schach.css" />
+</head>
+<body>
+    <dialog id="sd">
+        <button id="CloseB" type="button" onclick="cFig(1)"></button>
+        <button id="CloseB2" type="button" onclick="cFig(2)"></button>
+        <button id="CloseB3" type="button" onclick="cFig(3)"></button>
+        <button id="CloseB4" type="button" onclick="cFig(4)"></button>
+    </dialog>
+    <div id="ctest">
+    </div>
+    <div id="container">
+        <button style="background-color: lightgray;" id="Neues" type="button" onclick="Neues()">Neues Spiel</button>
+        <button style="background-color: lightgray;" id="Ziehe" type="button" onclick="Ziehe()">Ziehe!</button>
+    </div>
+
+    <i class="fa fa-bars" id="ic1" style="font-size:24px" onclick="F1()"></i>
+    <i class="fa fa-window-close" id="ic2" style="font-size:24px" onclick="F1()"></i>
+    <div id="myLinks">
+        <label class="l1" id="ll1">---</label>
+        <a id="a1" href="wurf.html">   Würfeln   </a>
+        <label class="l1" id="ll2">---</label>
+        <a id="a2" href="index.html">   Schach Rätsel   </a>
+        <label class="l1" id="ll3">---</label>
+        <a id="a3" href="#about">   About   </a>
+    </div>
+
+    <div id="container4">
+        <button style="background-color: lightgray;" id="Drehe" type="button" onclick="Drehe()">Drehe Brett</button>
+        <button style="background-color: lightgray;" id="vonDatei" type="button" onclick="vonDatei()">aus Datei</button>
+    </div>
+    <div id="container5">
+        <select style="background-color: lightgray;" onchange="onchZ()" name="Halbzug" id="Tiefe">
+            <option value="Z1">1 Halbzug</option>
+            <option value="Z2">2 Halbzug</option>
+            <option value="Z3">3 Halbzug</option>
+            <option value="Z4">4 Halbzug</option>
+        </select>
+        <label style="background-color: lightgray;" id="PCL">Gegen PC<input type="checkbox" id="PCCh" checked="checked" onclick='handleClick2(this);'></label>
+    </div>
+    <div id="container6">
+        <button style="background-color: lightgray;" id="RRR" type="button" onclick="RRR()"><<</button>
+        <button style="background-color: lightgray;" id="RR" type="button" onclick="RR()"><</button>
+        <button style="background-color: lightgray;" id="VV" type="button" onclick="VV()">></button>
+        <button style="background-color: lightgray;" id="VVV" type="button" onclick="VVV()">>></button>
+    </div>
+
+    <p id="p1"></p>
+
+    <script>
+        let Rmodi = false;
+    </script>
+    <script src="Stell.js"></script>
+    <script src="Spiel.js"></script>
+    <script src="sch1.js"></script>
+</body>
+</html >

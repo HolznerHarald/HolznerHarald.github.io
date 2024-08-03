@@ -1,56 +1,65 @@
-﻿#Testen{
-    /*display:none;*/
+﻿#ic1 {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
-
-p {
-    background: grey;
+#ic2 {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+#myLinks {
+    background-color: blue;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
+    z-index: 2;
+}
+a {
+    z-index: 2;
+    background-color: blue;
+    display: block;
+    text-decoration: none;
+    color: white;
 }
 #Infos p {
     display: inline;
-}
-#tWurf td {
-        border-style: solid;
-        background: #00FFFF;
+    margin: 30px;
 }
 
-#Naechsterbutton {
-    background: red;  
-}
-#Anz1 {
-    border: solid;
-}
-#Anz2 {
-    background: #CDCDCD;
-}
-#Servieren {
-    border: solid;
+#Naechsterbutton{
+    visibility:hidden;
 }
 #tWurf {
-    width: 100%;
+    width: 80%; 
+    display: inline;
 }
-#tWurf td{
-    width: 14%;
+#tWurf td {
+    border-style: solid;
+    width: 16%;
+    /*height: 100px;*/
+   /* font-size:70px;*/
 }
 #tZettel {
-   width: 100%;   
-}
-#tZettel td {
-    width: 14%;
-}
-#Testen {
-    float: right;
+    width: 100%;
 }
 #tZettel td {
     border-style: solid;
-   
+    width: 14%;
 }
 #Nachricht {
     border-style: solid;
-    background: yellow;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px){
     #container {
-    /*width: 70%;
-    margin: auto;*/
+        width: 70%;
+        margin: auto;
     }
+    #tWurf {
+      width: 40%;
+    }
+    /*display: flex;*/
 }
