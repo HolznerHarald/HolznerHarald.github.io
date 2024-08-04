@@ -396,7 +396,8 @@ if (Weite > Hoehe*1.2) {
     BrettHW = 0.75 * (Hoehe-20);
 }
 let hss = (BrettHW / 22) + "px";
-let hss1 = hss;
+let hss1 = (BrettHW / 11) + "px";
+//let hss1 = hss;
 let hww = BrettHW * 0.27 + "px";
 
 let Fehlerhaft = false;
