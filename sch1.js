@@ -420,7 +420,8 @@ else
 
 
 if (Handy) {
-    let hss1 = (BrettHW / 11) + "px";
+   // let hss1 = (BrettHW / 11) + "px";
+    let hss1 = hss;
     document.getElementById("ic1").style.fontSize = hss1;
     document.getElementById("ic2").style.fontSize = hss1;
     document.getElementById("a1").style.fontSize = hss1;
