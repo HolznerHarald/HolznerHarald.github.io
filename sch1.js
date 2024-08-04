@@ -410,9 +410,7 @@ let FSmarkxx = -1;
 
 document.getElementById("p1").style.position = "absolute";
 document.getElementById("p1").style.fontSize = hss;
-let hss1 = (BrettHW / 11) + "px";
-document.getElementById("ic1").style.fontSize = hss1;
-document.getElementById("ic2").style.fontSize = hss1;
+
 document.getElementById("container").style.position = "absolute";
 
 if (Rmodi)
@@ -422,6 +420,16 @@ else
 
 
 if (Handy) {
+    let hss1 = (BrettHW / 11) + "px";
+    document.getElementById("ic1").style.fontSize = hss1;
+    document.getElementById("ic2").style.fontSize = hss1;
+    document.getElementById("a1").style.fontSize = hss1;
+    document.getElementById("a2").style.fontSize = hss1;
+    document.getElementById("a3").style.fontSize = hss1;
+    document.getElementById("ll1").style.fontSize = hss1;
+    document.getElementById("ll2").style.fontSize = hss1;
+    document.getElementById("ll3").style.fontSize = hss1;
+
     document.getElementById("container").style.top = BrettHW * 0.01 + "px";
     document.getElementById("container").style.left = BrettHW * 0.01 + "px";
 
