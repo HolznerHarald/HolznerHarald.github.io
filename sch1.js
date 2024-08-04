@@ -44,7 +44,7 @@ function F1() {
     var xLinks = document.getElementById("myLinks");
     var i1 = document.getElementById("ic1");
     var i2 = document.getElementById("ic2");
-    xLinks.style.width = BrettHW*1.5 + "px";
+    xLinks.style.width = BrettHW*0.8 + "px";
 
     if (xLinks.style.display === "block") {
         xLinks.style.display = "none";
@@ -410,6 +410,9 @@ let FSmarkxx = -1;
 
 document.getElementById("p1").style.position = "absolute";
 document.getElementById("p1").style.fontSize = hss;
+let hss1 = (BrettHW / 11) + "px";
+document.getElementById("ic1").style.fontSize = hss1;
+document.getElementById("ic2").style.fontSize = hss1;
 document.getElementById("container").style.position = "absolute";
 
 if (Rmodi)
