@@ -382,6 +382,7 @@ function nurSpiel() {
 
 
 //*****************Main Prozedur **********************/
+document.getElementById("p1").innerText = "Test";
 let Hoehe = window.innerHeight;   // clientHeight ohne horizontale scrollbar 
 let Weite = window.innerWidth;
 let Handy = true;
@@ -395,6 +396,7 @@ if (Weite > Hoehe*1.2) {
     BrettHW = 0.75 * (Hoehe-20);
 }
 let hss = (BrettHW / 22) + "px";
+let hss1 = hss;
 let hww = BrettHW * 0.27 + "px";
 
 let Fehlerhaft = false;
@@ -421,7 +423,7 @@ else
 
 if (Handy) {
    // let hss1 = (BrettHW / 11) + "px";
-    let hss1 = hss;
+    
     document.getElementById("ic1").style.fontSize = hss1;
     document.getElementById("ic2").style.fontSize = hss1;
     document.getElementById("a1").style.fontSize = hss1;
@@ -470,10 +472,16 @@ let Spiel1;
 
 IMGFill();
 
+document.getElementById("p1").innerText = "Test";
+document.getElementById("p1").innerText = "Test\nhss:" + hss + "\nhss1:" + hss1 + "\nWeite:" + Weite + "\nHoehe:" + Hoehe;
+
+
+
 if (Rmodi)
     FIGIMGFill();
 else
     Spiel1 = new Spiel();
-    
+document.getElementById("p1").innerText = "Test";
+document.getElementById("p1").innerText = "Test\nhss:" + hss +"\nhss1:" + hss1 +"\nWeite:" +Weite +"\nHoehe:" + Hoehe; 
 
 
