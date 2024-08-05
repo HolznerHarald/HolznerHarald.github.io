@@ -359,6 +359,10 @@ function nurSpiel() {
     document.getElementById("PCCh").style.width = hss;
     document.getElementById("PCCh").style.height = hss;
     document.getElementById("PCL").style.fontSize = hss;
+    document.getElementById("RR").style.fontSize = hss;
+    document.getElementById("RRR").style.fontSize = hss;
+    document.getElementById("VV").style.fontSize = hss;
+    document.getElementById("VVV").style.fontSize = hss;
     document.getElementById("Tiefe").value = "Z" + BewertungsTiefe;
     
 
