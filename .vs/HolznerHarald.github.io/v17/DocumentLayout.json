@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\wurf.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:wurf.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\wurf1.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:wurf1.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\sch1.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:sch1.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\SchachSpiel.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SchachSpiel.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\wurf.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:wurf.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\wurf1.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -27,16 +27,16 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:schach.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\wurf1.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:wurf1.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\Spiel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Spiel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\SchachSpiel.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SchachSpiel.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\Stell.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Stell.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\Spiel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Spiel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,17 +46,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "sch1.js",
               "DocumentMoniker": "C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\sch1.js",
               "RelativeDocumentMoniker": "sch1.js",
               "ToolTip": "C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\sch1.js",
               "RelativeToolTip": "sch1.js",
-              "ViewState": "AQIAACYAAAAAAAAAAIA+wC4AAAAkAAAA",
+              "ViewState": "AQIAANIBAAAAAAAAAIA6wN8BAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-08-04T05:35:55.105Z",
               "IsPinned": true,
@@ -74,61 +74,64 @@
               "RelativeDocumentMoniker": "wurf1.css",
               "ToolTip": "C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\wurf1.css",
               "RelativeToolTip": "wurf1.css",
-              "ViewState": "AQIAACMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAAEEAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-08-04T05:58:14.623Z"
+              "WhenOpened": "2024-08-04T05:58:14.623Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "wurf1.js",
               "DocumentMoniker": "C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\wurf1.js",
               "RelativeDocumentMoniker": "wurf1.js",
               "ToolTip": "C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\wurf1.js",
               "RelativeToolTip": "wurf1.js",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAlwAYAAAAKAAAA",
+              "ViewState": "AQIAABYBAAAAAAAAAIA6wB4BAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-08-04T05:49:13.472Z"
+              "WhenOpened": "2024-08-04T05:49:13.472Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "wurf.html",
               "DocumentMoniker": "C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\wurf.html",
               "RelativeDocumentMoniker": "wurf.html",
               "ToolTip": "C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\wurf.html",
               "RelativeToolTip": "wurf.html",
-              "ViewState": "AQIAAAkAAAAAAAAAAADgvw0AAAAYAAAA",
+              "ViewState": "AQIAABMAAAAAAAAAAAA3wBkAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-08-04T05:49:03.618Z"
+              "WhenOpened": "2024-08-04T05:49:03.618Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "SchachSpiel.html",
               "DocumentMoniker": "C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\SchachSpiel.html",
               "RelativeDocumentMoniker": "SchachSpiel.html",
               "ToolTip": "C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\SchachSpiel.html",
               "RelativeToolTip": "SchachSpiel.html",
-              "ViewState": "AQIAABIAAAAAAAAAAADgvxMAAAAAAAAA",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAAADEAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2024-08-04T05:48:21.044Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "Spiel.js",
               "DocumentMoniker": "C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\Spiel.js",
               "RelativeDocumentMoniker": "Spiel.js",
               "ToolTip": "C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\Spiel.js",
               "RelativeToolTip": "Spiel.js",
-              "ViewState": "AQIAAGMAAAAAAAAAAAAvwGoAAAAbAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-08-04T05:38:29.357Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Stell.js",
               "DocumentMoniker": "C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\Stell.js",
               "RelativeDocumentMoniker": "Stell.js",
@@ -146,21 +149,23 @@
               "RelativeDocumentMoniker": "schach.css",
               "ToolTip": "C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\schach.css",
               "RelativeToolTip": "schach.css",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAEAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-08-04T05:33:35.52Z"
+              "WhenOpened": "2024-08-04T05:33:35.52Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\index.html",
               "RelativeDocumentMoniker": "index.html",
               "ToolTip": "C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\index.html",
               "RelativeToolTip": "index.html",
-              "ViewState": "AQIAADIAAAAAAAAAAAAAAB8AAAAYAAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAB8AAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-08-04T05:32:06.841Z"
+              "WhenOpened": "2024-08-04T05:32:06.841Z",
+              "EditorCaption": ""
             }
           ]
         }

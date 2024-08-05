@@ -382,7 +382,6 @@ function nurSpiel() {
 
 
 //*****************Main Prozedur **********************/
-document.getElementById("p1").innerText = "Test";
 let Hoehe = window.innerHeight;   // clientHeight ohne horizontale scrollbar 
 let Weite = window.innerWidth;
 let Handy = true;
@@ -473,16 +472,11 @@ let Spiel1;
 
 IMGFill();
 
-document.getElementById("p1").innerText = "Test";
-document.getElementById("p1").innerText = "Test\nhss:" + hss + "\nhss1:" + hss1 + "\nWeite:" + Weite + "\nHoehe:" + Hoehe;
-
-
-
 if (Rmodi)
     FIGIMGFill();
 else
     Spiel1 = new Spiel();
-document.getElementById("p1").innerText = "Test";
-document.getElementById("p1").innerText = "Test\nhss:" + hss +"\nhss1:" + hss1 +"\nWeite:" +Weite +"\nHoehe:" + Hoehe; 
+//document.getElementById("p1").innerText = "Test";
+//document.getElementById("p1").innerText = "Test\nhss:" + hss +"\nhss1:" + hss1 +"\nWeite:" +Weite +"\nHoehe:" + Hoehe; 
 
 

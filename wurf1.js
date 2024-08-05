@@ -2,11 +2,10 @@
 
 // JavaScript source code
 //  geht erstnach def.! document.getElementById("f1").innerHTML = "not";
-function F1() {
-    var x = document.getElementById("myLinks");
+function F2() {
     var i1 = document.getElementById("ic1");
     var i2 = document.getElementById("ic2");
-    x.style.width = window.innerWidth*0.8 + "px";
+    var x = document.getElementById("myLinks");
 
     if (x.style.display === "block") {
         x.style.display = "none";
@@ -280,21 +279,43 @@ function tWurfclick(num) {
         tds0[num - 1].style.background = "white";
     }
 }
+//*****************Main Prozedur **********************/
+let hoehe = window.innerHeight;   // clientHeight ohne horizontale scrollbar
+let Weite = window.innerWidth;
+document.getElementById("tWurf").style.width = Weite;
+document.getElementById("tWurf").style.height = hoehe;
+//document.getElementById("wei").innerText = "W:" + Weite;
 
-/*
+let t
+let trs
+let tds
+let tds0
+let glAnz1 = 0
+let glAnz2 = 0
+let ZahlenAnzahl = [0, 0, 0, 0, 0, 0]
+//document.getElementById("tZettel").style.fontSize = hhF;
+let hhF = hoehe / 35 + "px";
+document.getElementsByTagName('body')[0].style.fontSize = hhF;
+document.getElementsByTagName('button')[0].style.fontSize = hhF;
+document.getElementsByTagName('button')[1].style.fontSize = hhF;
+document.getElementsByTagName('button')[2].style.fontSize = hhF;
+let hhF2 = hoehe / 10 + "px";
 
+let BrettHW = Math.min(hoehe / 2, Weite);
+if (Weite > hoehe * 1.2)
+    BrettHW = 0.75 * (hoehe - 20);
+let hss1 = (BrettHW / 11) + "px";
 
+document.getElementById("myLinks").style.width = BrettHW * 0.8 + "px";
 
-document.getElementById('Zahl1').innerHTML = rand()
-document.getElementById('Zahl2').innerHTML = rand()
-document.getElementById('Zahl3').innerHTML = rand()
-document.getElementById('Zahl4').innerHTML = rand()
-document.getElementById('Zahl5').innerHTML = rand()
-let A1 = document.getElementById('Anz1').innerHTML;
-A1++;
-document.getElementById('Anz1').innerHTML = A1;
-let A2 = document.getElementById('Anz2').innerHTML;
-A2++;
-document.getElementById('Anz2').innerHTML = A2;
+document.getElementById("ic1").style.fontSize = hss1;
+document.getElementById("ic2").style.fontSize = hss1;
+document.getElementById("a1").style.fontSize = hss1;
+document.getElementById("a2").style.fontSize = hss1;
+document.getElementById("a3").style.fontSize = hss1;
 
-*/
+document.getElementById("container").style.position = "absolute";
+
+document.getElementById('ZReihe').style.fontSize = hhF2;
+init();
+

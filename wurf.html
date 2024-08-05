@@ -11,25 +11,23 @@
 
 </head>
 <body>   
-    <i class="fa fa-bars" id="ic1" style="font-size:24px" onclick="F1()"></i>
-    <i class="fa fa-window-close" id="ic2" style="font-size:24px" onclick="F1()"></i>
     <div id="myLinks">        
         <a id="a1" href="index.html">   Schach Rätsel   </a>        
         <a id="a2" href="SchachSpiel.html">   Schach spielen   </a>        
         <a id="a3" href="#about">   About   </a>
     </div>
     <div id="container">
-        <script src="wurf1.js"></script>
         <button id="Startbutton" type="button" onclick="Start()">Start</button>
-        <button id="Anleitung" type="button" onclick="alert(decodeURI('W%C3%BCrfel-Poker mit 5 Spalten:  In die Felder kann in beliebiger Reihenfolge eingetragen werden, mit Ausnahme der 1. und 5.Spalte. Die 1. muss von oben der Reihe nach befüllt werden, die 5. von unten . Bei servierte Figuren zählt jeder Eintrag doppelt, auch in den oberen Feldern. Wenn man in einer Spalte in den oberen 5 Feldern 70 Punkte erreicht bekommt man 45 Zusatzpunkte, in den Randspalten 60.'))">Anleitung</button>
+        <button id="Anleitung" type="button" onclick="alert(decodeURI('Version V1.18 W%C3%BCrfel-Poker mit 5 Spalten:  In die Felder kann in beliebiger Reihenfolge eingetragen werden, mit Ausnahme der 1. und 5.Spalte. Die 1. muss von oben der Reihe nach befüllt werden, die 5. von unten . Bei servierte Figuren zählt jeder Eintrag doppelt, auch in den oberen Feldern. Wenn man in einer Spalte in den oberen 5 Feldern 70 Punkte erreicht bekommt man 45 Zusatzpunkte, in den Randspalten 60.'))">Anleitung</button>
         <button id="Teste: 58 Wuerfe" type="button" onclick="next58()">teste 58 Wuerfe</button>
         <div id="Infos">
             <p id="Anz1">Anzahl Würfe:0</p>
             <p id="Anz2">Anzahl im Wurf:0</p>
-            <p id="Servieren">serviert</p>
-            <p id="wei"></p>
-            <p id="hei"></p>
+            <p id="Servieren">serviert</p>            
         </div>
+        <i class="fa fa-bars" id="ic1" style="font-size:24px" onclick="F2()"></i>
+        <i class="fa fa-window-close" id="ic2" style="font-size:24px" onclick="F2()"></i>
+
         <div id="middle">
 
             <table id="tWurf">
@@ -171,53 +169,7 @@
         </table>
         <p id="Ergebnis" type="button"></p>
 
-        <script>
-            /* so gehts
-            let t = document.getElementById("tWurf");
-            let trs = t.getElementsByTagName("tr");
-            let tds = trs[0].getElementsByTagName("td");
-            tds[3].innerText = 33333;*/
-            /* so auch
-            document.write(document.getElementById("tWurf").children.item(0).children.item(1).children.item(0).innerHTML)*/
-            /* und so auch
-            document.write(document.getElementById("tWurf").children[0].children[0].children[0].innerHTML)*/
-            let hoehe = window.innerHeight;   // clientHeight ohne horizontale scrollbar
-            let Weite = window.innerWidth;
-            document.getElementById("tWurf").style.width = Weite;
-            document.getElementById("tWurf").style.height = hoehe;
-            document.getElementById("wei").innerText = "W:" + Weite;
-            document.getElementById("hei").innerText = "H:" + hoehe;
-
-
-
-            let t
-            let trs
-            let tds
-            let tds0
-            let glAnz1 = 0
-            let glAnz2 = 0
-            let ZahlenAnzahl = [0, 0, 0, 0, 0, 0]
-            //document.getElementById("tZettel").style.fontSize = hhF;
-            let hhF = hoehe / 35 + "px";
-            document.getElementsByTagName('body')[0].style.fontSize = hhF;
-            document.getElementsByTagName('button')[0].style.fontSize = hhF;
-            document.getElementsByTagName('button')[1].style.fontSize = hhF;
-            document.getElementsByTagName('button')[2].style.fontSize = hhF;
-            let hhF2 = hoehe / 10 + "px";
-
-            let hss1 = hhF2;
-            document.getElementById("ic1").style.fontSize = hss1;
-            document.getElementById("ic2").style.fontSize = hss1;
-            document.getElementById("a1").style.fontSize = hss1;
-            document.getElementById("a2").style.fontSize = hss1;
-            document.getElementById("a3").style.fontSize = hss1;
-
-            document.getElementById("container").style.position = "absolute";
-            
-            document.getElementById('ZReihe').style.fontSize = hhF2;
-            init();
-
-        </script>
+        <script src="wurf1.js"></script>
     </div>
 </body>
 </html>
