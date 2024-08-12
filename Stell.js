@@ -109,9 +109,10 @@ class Stellung {
     }
     ErzeugeFeld(ints) {
         let hFeld = FeldCopy(this.Feld);
-                
-        hFeld[ints[2]][ints[3]] = hFeld[ints[0]][ints[1]];
-        hFeld[ints[0]][ints[1]] = "ll";
+        if (ints[2] != ints[0] || ints[3] != ints[1]) {
+            hFeld[ints[2]][ints[3]] = hFeld[ints[0]][ints[1]];
+            hFeld[ints[0]][ints[1]] = "ll";
+        }
         // Umwandel mit 5.Feld
         if (ints.length > 4) {
             if (ints[4] === 1) {
@@ -130,29 +131,45 @@ class Stellung {
                     hFeld[4][ints[3]] = "ll";
             }
             else if (ints[4] == 6) { //Rochade gr0ß
-                if (this.AmZug == 'w') {
-                    hFeld[7][0] = "ll";
+                if (this.AmZug == 'w') {                   
+                    if (hFeld[7][ this.StartPositionRoch[0]] != "wk")
+                        hFeld[7][ this.StartPositionRoch[0]] = "ll";
                     hFeld[7][3] = "wr";
+
                 }
-                else {
-                    hFeld[0][0] = "ll";
-                    hFeld[0][3] = "br";
+                else {                  
+                    if (hFeld[0][ this.StartPositionRoch[0]] != "bk")
+                        hFeld[0][ this.StartPositionRoch[0]] = "ll";
+                    hFeld[0][ 3] = "br";
                 }
             }
             else if (ints[4] == 7) { //Rochade klein
                 if (this.AmZug == 'w') {
-                    hFeld[7][7] = "ll";
-                    hFeld[7][5] = "wr";
+                    if (hFeld[7][this.StartPositionRoch[2]] != "wk")
+                        hFeld[7][this.StartPositionRoch[2]] = "ll";
+                    hFeld[7][ 5] = "wr";
                 }
                 else {
-                    hFeld[0][7] = "ll";
-                    hFeld[0][5] = "br";
+                    if (hFeld[0][ this.StartPositionRoch[2]] != "bk")
+                        hFeld[0][ this.StartPositionRoch[2]] = "ll";
+                    hFeld[0][ 5] = "br";
                 }
             }
         }
         return hFeld;
     };
     Zuggefunden(hzug) {
+        //Rochade ,auf König und Turm
+
+        if (this.RochM[this.iFarbe][ 0] && this.iFarbe * 7 == hzug[0] && this.iFarbe * 7 == hzug[2] &&
+            hzug[1] == this.StartPositionRoch[1] && hzug[3] == this.StartPositionRoch[0]) {
+            hzug[3] = 2;
+        }
+        if (this.RochM[this.iFarbe][ 1] && this.iFarbe * 7 == hzug[0] && this.iFarbe * 7 == hzug[2] &&
+            hzug[1] == this.StartPositionRoch[1] && hzug[3] == this.StartPositionRoch[2]) {
+            hzug[3] = 6;
+        }        
+
         let ZugGueltig = false;;
         for (let ii = 0; ii < this.lZuege.length; ii++) {
             ZugGueltig = true;
@@ -243,6 +260,7 @@ class Stellung {
             }
         } else if (this.Status === "MM") {
             AnzLoesungen = AnzLoesungen + 1;
+            LoesungsListe.push(this.Zugfolge.substring(3));
             document.getElementById("p1").innerText = this.Zugfolge.substring(3) + "\n" + document.getElementById("p1").innerText;
         }
     }
@@ -357,17 +375,33 @@ class Stellung {
         if (this.RochM[this.iFarbe][0])  //Rochade groß
         {
             let bm = true;
-            for (let ii = 2; ii < this.StartPositionRoch[1]; ii++)
-            {                            
-                if (this.Feld[this.iFarbe * 7][ii] != "ll") {
+            if (this.StartPositionRoch[1] == 1) {
+                if (this.Feld[this.iFarbe * 7][2] != "ll" || this.Feld[this.iFarbe * 7][ 3] != "ll")
                     bm = false;
-                    break;
-                }
+                if (this.feldImSchach([this.iFarbe * 7, 1], this.Gegner, this.Feld) ||
+                    this.feldImSchach([this.iFarbe * 7, 2], this.Gegner, this.Feld))
+                    bm = false;
             }
-            for (let ii = 2; ii <= this.StartPositionRoch[1]; ii++) {
-                if (this.feldImSchach([this.iFarbe * 7, ii ], this.Gegner, this.Feld)) {
+            else if (this.StartPositionRoch[1] == 2) {
+                if (this.Feld[this.iFarbe * 7][ 3] != "ll")
                     bm = false;
-                    break;
+                if (this.StartPositionRoch[0] == 0 && this.Feld[this.iFarbe * 7][ 1] != "ll")
+                    bm = false;
+                if (this.feldImSchach([this.iFarbe * 7, 2], this.Gegner, this.Feld))
+                    bm = false;
+            }
+            else {
+                for (let ii = 2; ii < this.StartPositionRoch[1]; ii++) {
+                    if (this.Feld[this.iFarbe * 7][ii] != "ll" && ii != this.StartPositionRoch[0]) {//Korr. Rochade 960
+                        bm = false;
+                        break;
+                    }
+                }
+                for (let ii = 2; ii <= this.StartPositionRoch[1]; ii++) {
+                    if (this.feldImSchach([this.iFarbe * 7, ii], this.Gegner, this.Feld)) {
+                        bm = false;
+                        break;
+                    }
                 }
             }
             if (bm) {
@@ -378,18 +412,24 @@ class Stellung {
         if (this.RochM[this.iFarbe][1])  //Rochade klein
         {
             let bm = true;
-            for (let ii = this.StartPositionRoch[1] + 1; ii < 7 ; ii++)
-            {
-                if (this.Feld[this.iFarbe * 7][ ii] != "ll") {
+            if (this.StartPositionRoch[1] == 6) {
+                if (this.Feld[this.iFarbe * 7][ 5] != "ll")
                     bm = false;
-                    break;
-                }
+                if (this.feldImSchach([this.iFarbe * 7, 6 ], this.Gegner, this.Feld))
+                    bm = false;
             }
-            for (let ii = this.StartPositionRoch[1]; ii < 7; ii++)
-            {
-                if (this.feldImSchach([this.iFarbe * 7, ii], this.Gegner, this.Feld)) {
-                    bm = false;
-                    break;
+            else {
+                for (let ii = this.StartPositionRoch[1] + 1; ii < 7; ii++) {
+                    if (this.Feld[this.iFarbe * 7][ii] != "ll" && ii != this.StartPositionRoch[2]) { //Korr. Rochade 960
+                        bm = false;
+                        break;
+                    }
+                }
+                for (let ii = this.StartPositionRoch[1]; ii < 7; ii++) {
+                    if (this.feldImSchach([this.iFarbe * 7, ii], this.Gegner, this.Feld)) {
+                        bm = false;
+                        break;
+                    }
                 }
             }
             if (bm) {

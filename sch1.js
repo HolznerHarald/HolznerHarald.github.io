@@ -15,6 +15,42 @@ const afeld = "abcdefgh";
 const Farben = "wb";
 
 
+function help1() {
+    var s1 = decodeURI("Hilfe\nF%C3%BCr einen Zug zuerst auf das Startfeld und dann auf das Endfeld des Zuges klicken. Da sich bei Chess960 manchmal die K%C3%B6nigsposition nicht %C3%A4ndert oder auch nur um ein Feld verschoben ist , klickt man f%C3%BCr die Rochade zuerst auf den K%C3%B6nig und dann auf den Turm. Mit Position 518 wird eine klassiche Schachpartie gestartet, bekannt auch unter Langweilerschach. Bei Chess960 wird die Positionsnummer entweder von 0 bis 959 oder von 1 bis 960 angegeben. Bei Halbzug kann die Tiefe der Zugberechnung eingestellt werden")
+    if (Rmodi)
+        s1 = decodeURI("Hilfe\nWenn man die Anzahl aller m%C3%B6glichen Varianten wissen m%C3%B6chte, darf man die Checkbox \"Nur notwendige Varianten\" nicht ankreuzen. Um ein neues R%C3%A4tsel einzugeben, zuerst den Button Leeren anklicken und dann die Figuren aufstellen, indem man auf eine Figur unterhalb des Brett klickt, und wenn diese gelb erscheint auf ein Feld auf dem Brett klickt");
+    alert(s1);
+}
+function Nr960() {
+
+    var s1 = window.prompt("Zahl zwischen 0 und 959:", "518");
+    if (!isNaN(s1)) {
+        Spiel1 = new Spiel(s1);
+        document.getElementById("p1").innerText = "960er Position:" + s1 +"\n";
+    }
+    else
+        alert("Zahl muss zwischen 0 und 959 sein")
+   // document.getElementById("NrD").hidden = false;
+   // document.getElementById("NrD").showModal();
+  /*  if (erstNr) {
+        document.getElementById("NrD").showModal();
+        erstNr = false;
+    }
+    else {
+        document.getElementById("NrD").hidden = false;
+        document.getElementById("NrD").showModal();
+    }*/
+}
+function NrOk() {
+    let s1 = document.getElementById("tx1").textContent;
+    if (!isNaN(s1)) {
+        document.getElementById("NrD").hidden = true;
+        document.getElementById("NrD").close();
+        Spiel1 = new Spiel(s1);
+        //document.getElementById("NrD").hidden = false;
+    }
+}
+    
 function cFig(cF) {
     umwandelnhzug[4] = cF;
     document.getElementById("sd").hidden = true;
@@ -56,7 +92,7 @@ function F1() {
         i1.style.display = "none";
     }
 }
-function init(FeldArt) {
+function init(Nr96) {
     let hFeld = new Array(8);
     for (let i = 0; i < hFeld.length; i++) {
         hFeld[i] = new Array(8);
@@ -66,18 +102,82 @@ function init(FeldArt) {
             hFeld[i][jj] = "ll";
         }
     }
-    if (FeldArt === 0) {
+    //960
+    if (Nr96 === 0) {
+        //Matt in 1 mit Umwandlung
+        hFeld[1][0] = "wp";
+        hFeld[2][6] = "wk";
+        hFeld[0][7] = "bk";
+        /*
+        hFeld[0][0] = "bk";
+        hFeld[0][2] = "wk";
+        hFeld[1][0] = "bb";
+        hFeld[1][2] = "wp";
+        hFeld[1][4] = "wn";
+        hFeld[1][1] = "bp";
+        hFeld[2][1] = "bp";
+        hFeld[3][1] = "wp";
+        hFeld[3][4] = "wn";
+        hFeld[6][6] = "bn";*/
+        return hFeld;
+    }
+    hFeld[1] = ["bp", "bp", "bp", "bp", "bp", "bp", "bp", "bp"];
+    hFeld[6] = ["wp", "wp", "wp", "wp", "wp", "wp", "wp", "wp"];
+
+    let number96 = Nr96 % 16;
+    let halfNumber = Math.floor(number96 / 4);
+    let positionSL = halfNumber * 2;
+    hFeld[0][positionSL] = "bb";
+    let remainderNumber = number96 % 4;
+    let positionWL = remainderNumber * 2 + 1;
+    hFeld[0][positionWL] = "bb";
+
+    let number96Mod = Nr96 % 96;
+    let halfPositionD = Math.floor(number96Mod / 16);
+
+    let positionD = freiesFeld(halfPositionD, hFeld);
+    hFeld[0][positionD] = "bq";
+
+    let number96Div = Math.floor(Nr96 / 96);
+    let halfPositionS1 = 0;
+    let halfPositionS2 = number96Div + 1;
+
+    if (number96Div >= 4 && number96Div <= 6) {
+        halfPositionS1 = 1;
+        halfPositionS2 = (number96Div - 4) + 2;
+    } else if (number96Div >= 7 && number96Div <= 8) {
+        halfPositionS1 = 2;
+        halfPositionS2 = (number96Div - 7) + 3;
+    } else if (number96Div === 9) {
+        halfPositionS1 = 3;
+        halfPositionS2 = 4;
+    }
+    let positionS1 = freiesFeld(halfPositionS1, hFeld);
+    let positionS2 = freiesFeld(halfPositionS2, hFeld);
+    hFeld[0][positionS1] = "bn";
+    hFeld[0][positionS2] = "bn";
+
+    let positionT1 = freiesFeld(0, hFeld);
+    hFeld[0][positionT1] = "br";
+    let positionK = freiesFeld(0, hFeld);
+    hFeld[0][positionK] = "bk";
+    let positionT2 = freiesFeld(0, hFeld);
+    hFeld[0][positionT2] = "br";
+
+    for (let index = 0; index < 8; index++) {
+        hFeld[7][index] = "w" + hFeld[0][index][1];
+    }
+
+    return hFeld;
+    /*
+
+    if (FeldArt === 1) {
         hFeld[0] = ["br", "bn", "bb", "bq", "bk", "bb", "bn", "br"];
         hFeld[1] = ["bp", "bp", "bp", "bp", "bp", "bp", "bp", "bp"];
         hFeld[7] = ["wr", "wn", "wb", "wq", "wk", "wb", "wn", "wr"];
         hFeld[6] = ["wp", "wp", "wp", "wp", "wp", "wp", "wp", "wp"];
     }
-    else if (FeldArt === 1) {
-        //Matt in 1 mit Umwandlung
-        hFeld[1][0] = "wp";
-        hFeld[2][6] = "wk";
-        hFeld[0][7] = "bk";
-    }
+  */
 
     /* das Matt in 3
        hFeld[6][5] = "wk";
@@ -97,13 +197,26 @@ function init(FeldArt) {
         hFeld[0][0] = "wk";
         hFeld[0][1] = "wn";
         hFeld[1][0] = "bk";
-        hFeld[1][1] = "bn";*/
-
-    return hFeld;
+        hFeld[1][1] = "bn";*/   
 }
+function freiesFeld(hPos, field) {
+    let freeFieldCount = -1;
+    for (let index = 0; index < 8; index++) {
+        if (field[0][index] === "ll") {
+            freeFieldCount++;
+        }
+
+        if (freeFieldCount === hPos) {
+            return index;
+        }
+    }
+    return -1;
+}
+
 function Loesen() {
     Fehlerhaft = false;
     AnzLoesungen = 0;
+    LoesungsListe = [];
     AnzVar = 0;
     document.getElementById("p1").innerText = "";    
     let stell1 = new Stellung(sFeld, 'w', 1, "ZF:", [-1, -1, -1, -1], [[false, false], [false, false]], [0,4,7]);
@@ -114,6 +227,23 @@ function Loesen() {
         return;
     document.getElementById("p1").innerText = "Berechnete Varianten:" + AnzVar + document.getElementById("p1").innerText;
     stell1.MattAnzeigen();
+
+    let ersterZuege = [];
+  
+    for (let ii = 0; ii < LoesungsListe.length; ii++) {
+        let s1 = LoesungsListe[ii];        
+        s1=s1.replace("w", "b");
+        let Zuege = s1.split("b");
+        if (Zuege[1] != ersterZuege[ersterZuege.length - 1])
+            ersterZuege.push(Zuege[1]);
+    }
+
+    document.getElementById("p1").innerText += "!!!!!!!!\n";
+    document.getElementById("p1").innerText += "Anzahl richtiger ErsterZuege:" + ersterZuege.length;;
+
+
+
+
 
     document.getElementById("p1").innerText = "Anzahl L\u00f6sungen:" + AnzLoesungen + "\n" + document.getElementById("p1").innerText;
 
@@ -243,11 +373,19 @@ function Ziehe() {
 }
 function Neues() {
     document.getElementById("p1").innerText = "";    
-    Spiel1 = new Spiel();
+    Spiel1 = new Spiel(518);
 }
+function R960() {
+    document.getElementById("p1").innerText = "";
+    let zz = Math.floor(Math.random() * 960);
+    Spiel1 = new Spiel(zz);
+    document.getElementById("p1").innerText = "960er Position:" + zz + "\n";
+}
+
 function Drehe() {    
     Spiel1.Drehe();
 }
+
 function vonDatei() {
     document.getElementById("p1").innerText = "";
     sZuege = localStorage.getItem("Zuege");
@@ -347,12 +485,17 @@ function nurSpiel() {
     document.getElementById("container4").style.position = "absolute";
     document.getElementById("container5").style.position = "absolute";
     document.getElementById("container6").style.position = "absolute";
+    document.getElementById("container7").style.position = "absolute";
     document.getElementById("Neues").style.fontSize = hss;
     document.getElementById("Ziehe").style.fontSize = hss;
+    document.getElementById("R960").style.fontSize = hss;
+    document.getElementById("Nr960").style.fontSize = hss;
     document.getElementById("Drehe").style.fontSize = hss;
     document.getElementById("vonDatei").style.fontSize = hss;    
     document.getElementById("Neues").style.width = hww*1.1;
     document.getElementById("Ziehe").style.width = hww;
+    document.getElementById("R960").style.width = hww*1.1;
+    document.getElementById("Nr960").style.width = hww;
     document.getElementById("Drehe").style.width = hww*1.1;
     document.getElementById("vonDatei").style.width = hww; 
     document.getElementById("Tiefe").style.fontSize = hss;
@@ -360,9 +503,13 @@ function nurSpiel() {
     document.getElementById("PCCh").style.height = hss;
     document.getElementById("PCL").style.fontSize = hss;
     document.getElementById("RR").style.fontSize = hss;
-    document.getElementById("RRR").style.fontSize = hss;
+    document.getElementById("RRR").style.fontSize = hss;   
     document.getElementById("VV").style.fontSize = hss;
     document.getElementById("VVV").style.fontSize = hss;
+    document.getElementById("RRR").style.width = hww2;
+    document.getElementById("RR").style.width = hww2;
+    document.getElementById("VVV").style.width = hww2;
+    document.getElementById("VV").style.width = hww2;
     document.getElementById("Tiefe").value = "Z" + BewertungsTiefe;
     
 
@@ -372,7 +519,9 @@ function nurSpiel() {
         document.getElementById("container5").style.top = (BrettHW / 8) + BrettHW * 1.02 + (BrettHW / 4) + "px";
         document.getElementById("container5").style.left = BrettHW * 0.01 + "0px";
         document.getElementById("container6").style.top = BrettHW * 1.02 + (BrettHW / 8) + "px";
-        document.getElementById("container6").style.left = BrettHW * 0.27 + "px";
+        document.getElementById("container6").style.left = BrettHW * 0.20 + "px";
+        document.getElementById("container7").style.top = (BrettHW / 8) + BrettHW * 1.02 + (BrettHW*3/ 8) + "px";
+        document.getElementById("container7").style.left = BrettHW * 0.01 + "0px";
     }
     else {
         document.getElementById("container4").style.top = (BrettHW / 8) + 10 + "px";
@@ -380,7 +529,10 @@ function nurSpiel() {
         document.getElementById("container5").style.top = (BrettHW / 8)*2 + 10 + "px";
         document.getElementById("container5").style.left = BrettHW + 10 + "px";
         document.getElementById("container6").style.top =  BrettHW * 1.01 + (BrettHW / 16) + "px";
-        document.getElementById("container6").style.left = BrettHW * 0.375 + "px";
+        document.getElementById("container6").style.left = BrettHW * 0.22 + "px";
+        document.getElementById("container7").style.top = (BrettHW / 8)*3 + 10 + "px";
+        document.getElementById("container7").style.left = BrettHW + 10 + "px";
+
     }
 }
 
@@ -402,9 +554,10 @@ let hss = (BrettHW / 22) + "px";
 let hss1 = (BrettHW / 11) + "px";
 //let hss1 = hss;
 let hww = BrettHW * 0.27 + "px";
-
+let hww2 = BrettHW * 0.14 + "px";
 let Fehlerhaft = false;
 let AnzLoesungen = 0;
+let LoesungsListe = [];
 let AnzVar = 0;
 let MattNachTeilzuegen = 4;
 let BewertungsTiefe = 2;
@@ -440,11 +593,11 @@ if (Handy) {
     document.getElementById("container").style.top = BrettHW * 0.01 + "px";
     document.getElementById("container").style.left = BrettHW * 0.01 + "px";
 
-    document.getElementById("p1").style.top = (BrettHW / 6) + BrettHW * 1.03 + (BrettHW / 8) * 2 + "px";
+    document.getElementById("p1").style.top = (BrettHW / 6) + BrettHW * 1.03 + (BrettHW / 8) * 3 + "px";
     document.getElementById("p1").style.left = "0px";
 
     document.getElementById("p1").style.width = BrettHW + "px";
-    document.getElementById("p1").style.height = BrettHW / 2 + "px";     
+    document.getElementById("p1").style.height = BrettHW / 2 - (BrettHW / 8) + "px";     
     
     document.getElementById("ll1").style.display = "none";
     document.getElementById("ll2").style.display = "none";
@@ -459,11 +612,11 @@ else {
     document.getElementById("a2").style.display = "inline";
     document.getElementById("a3").style.display = "inline";
     
-    document.getElementById("p1").style.top = (BrettHW / 3) + 20 + "px";
+    document.getElementById("p1").style.top = (BrettHW / 3) + (BrettHW / 8) + 20 + "px";
     document.getElementById("p1").style.left = BrettHW + 10 + "px";
 
     document.getElementById("p1").style.width = Weite - (BrettHW + 10) - 10 + "px";
-    document.getElementById("p1").style.height = BrettHW / 2 + "px";
+    document.getElementById("p1").style.height = BrettHW / 2 - (BrettHW / 8) + "px";
 
     
     document.getElementById("ic1").style.display = "none";
@@ -471,7 +624,10 @@ else {
 
 }
 
-let sFeld = init(1)
+let sFeld = init(518);
+if (Rmodi)
+    sFeld = init(0);
+
 let Spiel1;
 
 IMGFill();
@@ -479,8 +635,8 @@ IMGFill();
 if (Rmodi)
     FIGIMGFill();
 else
-    Spiel1 = new Spiel();
+    Spiel1 = new Spiel(518);
 //document.getElementById("p1").innerText = "Test";
 //document.getElementById("p1").innerText = "Test\nhss:" + hss +"\nhss1:" + hss1 +"\nWeite:" +Weite +"\nHoehe:" + Hoehe; 
 
-
+let erstNr = true;

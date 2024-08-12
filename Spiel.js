@@ -1,10 +1,25 @@
 // JavaScript source code
 class Spiel {
-    constructor() {        
+    constructor(Nr960) {   
+        this.Nr960 = Nr960;
         this.VarAnz = 0;
-        this.StartFeld = init(0);
+        this.StartFeld = init(Nr960);
         this.StartFarbe = 'w';
-        this.StartPositionRoch = [0, 4, 7];
+        this.StartPositionRoch = new Array(3);
+
+        let ersterR = true;
+        for (let index = 0; index < 8; index++) {
+            if (this.StartFeld[0][index][1] === 'r') {
+                if (!ersterR) {
+                    this.StartPositionRoch[2] = index;
+                } else {
+                    this.StartPositionRoch[0] = index;
+                    ersterR = false;
+                }
+            } else if (this.StartFeld[0][index][1] === 'k') {
+                this.StartPositionRoch[1] = index;
+            }
+        }
         this.Rochademoeglich = [[true, true], [true, true]];        
         this.Stell = new Stellung(this.StartFeld, this.StartFarbe, 1, "SZF:", [-1, -1, -1, -1], this.Rochademoeglich, this.StartPositionRoch);        
         //sFeld = this.Stell.Feld.slice();
@@ -70,6 +85,7 @@ class Spiel {
             } else if (status === "PP") {
                 document.getElementById("p1").innerText += " Patt, Spiel beendet";
             }
+            elem.scrollTop = elem.scrollHeight;
             return;
         }
 
@@ -280,7 +296,7 @@ class Spiel {
 
     StellungAufbauen(hsZugFolge) {
         this.ErstesZweitesFeld = 0;
-        init(0);
+        init(this.Nr960);
         this.Stell = new Stellung(this.StartFeld, this.StartFarbe, 1, "SZF:", [-1, -1, -1, -1], [[true, true],[true, true]], this.StartPositionRoch);
 
         for (var ii = 0; ii < this.aktuellerZug; ii++) {            
@@ -309,8 +325,8 @@ class Spiel {
     para = document.createElement("img");
     hs = "figuren\\" + "wq.png";
     para.src = hs;
-    para.style.width = 50 + "px";
-    para.style.height = 50 + "px";
+    para.style.width = BrettHW / 8 + "px";
+    para.style.height = BrettHW / 8 + "px";
     para.style.backgroundColor = 'sienna';
     document.getElementById("CloseB").replaceChildren();
     document.getElementById("CloseB").appendChild(para)
@@ -318,8 +334,8 @@ class Spiel {
     para = document.createElement("img");
     hs = "figuren\\" + "wr.png";
     para.src = hs;
-    para.style.width = 50 + "px";
-    para.style.height = 50 + "px";
+    para.style.width = BrettHW / 8 + "px";
+    para.style.height = BrettHW / 8 + "px";
     para.style.backgroundColor = 'sienna';
     document.getElementById("CloseB2").replaceChildren();
     document.getElementById("CloseB2").appendChild(para)
@@ -327,8 +343,8 @@ class Spiel {
     para = document.createElement("img");
     hs = "figuren\\" + "wb.png";
     para.src = hs;
-    para.style.width = 50 + "px";
-    para.style.height = 50 + "px";
+    para.style.width = BrettHW / 8 + "px";
+    para.style.height = BrettHW / 8 + "px";
     para.style.backgroundColor = 'sienna';
     document.getElementById("CloseB3").replaceChildren();
     document.getElementById("CloseB3").appendChild(para)
@@ -336,8 +352,8 @@ class Spiel {
     para = document.createElement("img");
     hs = "figuren\\" + "wn.png";
     para.src = hs;
-    para.style.width = 50 + "px";
-    para.style.height = 50 + "px";
+    para.style.width = (BrettHW / 8) + "px";
+    para.style.height = (BrettHW / 8) + "px";
     para.style.backgroundColor = 'sienna';
     document.getElementById("CloseB4").replaceChildren();
     document.getElementById("CloseB4").appendChild(para)

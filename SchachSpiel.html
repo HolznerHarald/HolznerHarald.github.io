@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="schach.css" />
 </head>
 <body>
+    <dialog id="NrD">
+        <input id="tx1" type="text" size="50" height="150" name="alter">
+        <button id="NrOk" type="button" onclick="NrOk()">ok</button>
+    </dialog>
+
     <dialog id="sd">
         <button id="CloseB" type="button" onclick="cFig(1)"></button>
         <button id="CloseB2" type="button" onclick="cFig(2)"></button>
@@ -19,7 +24,7 @@
     <div id="ctest">
     </div>
     <div id="container">
-        <button style="background-color: lightgray;" id="Neues" type="button" onclick="Neues()">Neues Spiel</button>
+        <button style="background-color: lightgray;" id="Neues" type="button" onclick="Neues()">518-Langweiler</button>
         <button style="background-color: lightgray;" id="Ziehe" type="button" onclick="Ziehe()">Ziehe!</button>
     </div>
 
@@ -31,7 +36,7 @@
         <label class="l1" id="ll2">---</label>
         <a id="a2" href="index.html">   Schach Rätsel   </a>
         <label class="l1" id="ll3">---</label>
-        <a id="a3" href="#about">   About   </a>
+        <a onclick="help1()" id="a3" href="#about">   Hilfe   </a>
     </div>
 
     <div id="container4">
@@ -53,7 +58,10 @@
         <button style="background-color: lightgray;" id="VV" type="button" onclick="VV()">></button>
         <button style="background-color: lightgray;" id="VVV" type="button" onclick="VVV()">>></button>
     </div>
-
+    <div id="container7">
+        <button style="background-color: lightgray;" id="R960" type="button" onclick="R960()">960 Zufall</button>
+        <button style="background-color: lightgray;" id="Nr960" type="button" onclick="Nr960()">960 Nr.</button>
+    </div>
     <p id="p1"></p>
 
     <script>
