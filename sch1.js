@@ -105,10 +105,10 @@ function init(Nr96) {
     //960
     if (Nr96 === 0) {
         //Matt in 1 mit Umwandlung
-        hFeld[1][0] = "wp";
+       /* hFeld[1][0] = "wp";
         hFeld[2][6] = "wk";
-        hFeld[0][7] = "bk";
-        /*
+        hFeld[0][7] = "bk";*/
+        
         hFeld[0][0] = "bk";
         hFeld[0][2] = "wk";
         hFeld[1][0] = "bb";
@@ -118,7 +118,7 @@ function init(Nr96) {
         hFeld[2][1] = "bp";
         hFeld[3][1] = "wp";
         hFeld[3][4] = "wn";
-        hFeld[6][6] = "bn";*/
+        hFeld[6][6] = "bn";
         return hFeld;
     }
     hFeld[1] = ["bp", "bp", "bp", "bp", "bp", "bp", "bp", "bp"];
@@ -225,8 +225,13 @@ function Loesen() {
     stell1.RekursivStatusBestimmenNachfolgeStellungen();
     if (Fehlerhaft)
         return;
-    document.getElementById("p1").innerText = "Berechnete Varianten:" + AnzVar + document.getElementById("p1").innerText;
+ //   document.getElementById("p1").innerText = "Berechnete Varianten:" + AnzVar + document.getElementById("p1").innerText;
     stell1.MattAnzeigen();
+
+ //   document.getElementById("p1").innerText = "Anzahl L\u00f6sungen:" + AnzLoesungen + "\n" + document.getElementById("p1").innerText;
+
+ //   document.getElementById("p1").innerText += "\n" + "Rechenzeit:" + (new Date() - currentTime).toString() + "ms" + "\n";
+    //document.getElementById("p1").innerText += "\n" + "F";
 
     let ersterZuege = [];
   
@@ -237,18 +242,46 @@ function Loesen() {
         if (Zuege[1] != ersterZuege[ersterZuege.length - 1])
             ersterZuege.push(Zuege[1]);
     }
+    let ss1= "!!!!!!!!\n";
+    ss1 += "Berechnete Varianten:" + AnzVar + "\n";;
+    ss1 += "Anzahl richtiger ErsterZuege:" + ersterZuege.length +"\n";
+    for (let ii = 0; ii < ersterZuege.length; ii++) {
+        ss1 += ZuginSyntax(ersterZuege[ii]) + "\n";
+    }
+    ss1 += "Rechenzeit:" + (new Date() - currentTime).toString() + "ms" + "\n";
+    ss1 += AnzLoesungen + " Matt-Varianten\n";
+    for (let jj = 0; jj < ersterZuege.length; jj++) {
+        for (let ii = 0; ii < LoesungsListe.length; ii++) {
+            let s1 = LoesungsListe[ii];
+            s1 = s1.replaceAll("w", "b");
+            let Zuege = s1.split("b");
+            if (Zuege[1] == ersterZuege[jj])
+            {
+                let ss2 = "";
+                for (let kk = 1; kk < Zuege.length; kk++)
+                {
+                    if (kk % 2 == 1)
+                        ss2 += " " +(kk + 1) / 2 +".";
+                    else
+                        ss2 += " ";
+                    ss2 += ZuginSyntax(Zuege[kk]);
+                }
+                ss1 += ss2 + "\n";
+            }
+        }
+    }
+    document.getElementById("p1").innerText = ss1;
 
-    document.getElementById("p1").innerText += "!!!!!!!!\n";
-    document.getElementById("p1").innerText += "Anzahl richtiger ErsterZuege:" + ersterZuege.length;;
-
-
-
-
-
-    document.getElementById("p1").innerText = "Anzahl L\u00f6sungen:" + AnzLoesungen + "\n" + document.getElementById("p1").innerText;
-
-    document.getElementById("p1").innerText += "\n" + "Rechenzeit:" + (new Date() - currentTime).toString() + "ms";
-    //document.getElementById("p1").innerText += "\n" + "F";
+    
+}
+function ZuginSyntax(Zug) { 
+    let hs1 = afeld[Zug[1]];
+    hs1 += (8 - Zug[0]).toString() + ":";
+    hs1 += afeld[Zug[3]];
+    hs1 += (8 - Zug[2]).toString();
+    if (Zug.length > 4)
+        hs1 += Zug[4];
+    return hs1;
 }
 function Leeren() {
     for (let jj = 0; jj < 8; jj++) {

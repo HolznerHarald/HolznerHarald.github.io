@@ -261,7 +261,7 @@ class Stellung {
         } else if (this.Status === "MM") {
             AnzLoesungen = AnzLoesungen + 1;
             LoesungsListe.push(this.Zugfolge.substring(3));
-            document.getElementById("p1").innerText = this.Zugfolge.substring(3) + "\n" + document.getElementById("p1").innerText;
+           // document.getElementById("p1").innerText = this.Zugfolge.substring(3) + "\n" + document.getElementById("p1").innerText;
         }
     }
     fZugfolge(hzug) {

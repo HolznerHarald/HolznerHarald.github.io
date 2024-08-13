@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:sch1.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\Stell.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Stell.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\Spiel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Spiel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\Stell.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Stell.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -66,8 +66,7 @@
               "RelativeToolTip": "about.html",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-08-12T04:43:30.847Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-12T04:43:30.847Z"
             },
             {
               "$type": "Document",
@@ -77,7 +76,7 @@
               "RelativeDocumentMoniker": "sch1.js",
               "ToolTip": "C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\sch1.js",
               "RelativeToolTip": "sch1.js",
-              "ViewState": "AQIAAN8AAAAAAAAAAAAtwO0AAAAkAAAA",
+              "ViewState": "AQIAAPkAAAAAAAAAAIAywAcBAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-08-04T05:35:55.105Z",
               "EditorCaption": ""
@@ -104,8 +103,7 @@
               "RelativeToolTip": "wurf1.js",
               "ViewState": "AQIAAA0AAAAAAAAAAAA9wBYAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-08-04T05:49:13.472Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-04T05:49:13.472Z"
             },
             {
               "$type": "Document",
@@ -117,8 +115,7 @@
               "RelativeToolTip": "wurf.html",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-08-04T05:49:03.618Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-04T05:49:03.618Z"
             },
             {
               "$type": "Document",
@@ -130,31 +127,30 @@
               "RelativeToolTip": "SchachSpiel.html",
               "ViewState": "AQIAABgAAAAAAAAAAAAAACYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-08-04T05:48:21.044Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-04T05:48:21.044Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Spiel.js",
               "DocumentMoniker": "C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\Spiel.js",
               "RelativeDocumentMoniker": "Spiel.js",
               "ToolTip": "C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\Spiel.js",
               "RelativeToolTip": "Spiel.js",
-              "ViewState": "AQIAAA8AAAAAAAAAAAA5wB0AAAAcAAAA",
+              "ViewState": "AQIAAPcAAAAAAAAAAIAywAYBAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-08-04T05:38:29.357Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Stell.js",
               "DocumentMoniker": "C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\Stell.js",
               "RelativeDocumentMoniker": "Stell.js",
               "ToolTip": "C:\\Users\\holzn\\source\\repos\\HolznerHarald\\HolznerHarald.github.io\\Stell.js",
               "RelativeToolTip": "Stell.js",
-              "ViewState": "AQIAAPoAAAAAAAAAAIAywP0AAAAQAAAA",
+              "ViewState": "AQIAAFMBAAAAAAAAAIAywCABAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-08-04T05:38:05.948Z",
               "EditorCaption": ""
@@ -181,8 +177,7 @@
               "RelativeToolTip": "index.html",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAAA8AAABeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-08-04T05:32:06.841Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-04T05:32:06.841Z"
             }
           ]
         }
