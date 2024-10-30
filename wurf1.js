@@ -18,6 +18,8 @@ function F2() {
     }
 }
 function Start() {
+    if (glAnz1 > 0)
+        location.reload();
     document.getElementById("Startbutton").style.visibility = "hidden";
     document.getElementById("Naechsterbutton").style.visibility = "visible";
     document.getElementById("Nachricht").innerHTML = decodeURI("Ergebnis schreiben oder einzelne W%C3%BCrfe fixieren oder n%C3%A4chster Wurf");
@@ -30,6 +32,7 @@ function nextbutton() {
         nextsubthrow();
 }
 function next58() {
+        
     for (let ii = 1; ii < 6; ii++) {
         for (let jj = 0; jj < 13; jj++) {
             document.getElementById("tZettel").children[0].children[jj].children[ii].innerHTML = 12;
@@ -40,7 +43,7 @@ function next58() {
     document.getElementById("tZettel").children[0].children[0].children[1].style.background = "blue";
     glAnz1 = 60;
     document.getElementById("Anz1").innerHTML = decodeURI("Anzahl W%C3%BCrfe:") + glAnz1;
-    
+   
 }
 function nextthrow() {
     document.getElementById("Servieren").innerHTML = "serviert";
@@ -176,6 +179,7 @@ function feldclick(rnr, snr) {
     // Nächsten Wurf vorbereiten
     if (glAnz1 == 60) {
         document.getElementById("Nachricht").innerHTML = "Spiel beendet, Ergebnis siehe unten";
+        document.getElementById("Startbutton").innerHTML = "Neues Spiel";
         document.getElementById("Startbutton").style.visibility = "visible";
         document.getElementById("Naechsterbutton").style.visibility = "hidden";
         for (let ii = 1; ii < 6; ii++) {
@@ -250,6 +254,8 @@ function init() {
     tds = trs[1].getElementsByTagName("td");
     tds0 = trs[0].getElementsByTagName("td");
     let hh = hoehe / 15 + "px";
+
+
     for (let ii = 0; ii < 5; ii++) {
         tds[ii].innerText = "not fixed";
         tds0[ii].style.height = hh;
@@ -299,6 +305,7 @@ document.getElementsByTagName('body')[0].style.fontSize = hhF;
 document.getElementsByTagName('button')[0].style.fontSize = hhF;
 document.getElementsByTagName('button')[1].style.fontSize = hhF;
 document.getElementsByTagName('button')[2].style.fontSize = hhF;
+document.getElementsByTagName('button')[3].style.fontSize = hhF;
 let hhF2 = hoehe / 10 + "px";
 
 let BrettHW = Math.min(hoehe / 2, Weite);
