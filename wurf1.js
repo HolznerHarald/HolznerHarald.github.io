@@ -32,7 +32,10 @@ function nextbutton() {
         nextsubthrow();
 }
 function next58() {
-        
+
+    const myWindow = window.open("BestenListe.html", "", "width=2000,height=1000");
+    myWindow.focus();
+
     for (let ii = 1; ii < 6; ii++) {
         for (let jj = 0; jj < 13; jj++) {
             document.getElementById("tZettel").children[0].children[jj].children[ii].innerHTML = 12;
@@ -205,7 +208,22 @@ function feldclick(rnr, snr) {
             Summe = Summe + Number(document.getElementById("tZettel").children[0].children[ii].children[6].innerHTML)
             document.getElementById("tZettel").children[0].children[ii].children[6].style.visibility = "visible";
         }
-        document.getElementById("Ergebnis").innerHTML = "Ergebnis: "+Summe;
+        document.getElementById("Ergebnis").innerHTML = "Ergebnis: " + Summe;
+        //Bestenliste
+        let BestenListe = localStorage.getItem("BestenListe");
+        let tim = new Date();        
+
+        let tim2 = tim.toDateString() + " " + tim.toTimeString();
+        tim2 = tim2.substring(4, 21);
+       
+        if (localStorage.getItem("BestenListe") === null) {            
+            BestenListe = Summe.toString() + " Punkte um: " + tim2 + ";";
+        }
+        else {
+            BestenListe = BestenListe + Summe.toString() + " Punkte um: " + tim2 + ";";
+        }    
+        
+        localStorage.setItem("BestenListe", BestenListe);    
     }
     else
         nextthrow();
