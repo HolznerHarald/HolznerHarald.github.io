@@ -18,7 +18,7 @@ const Farben = "wb";
 function help1() {
     var s1 = decodeURI("Hilfe\nF%C3%BCr einen Zug zuerst auf das Startfeld und dann auf das Endfeld des Zuges klicken. Da sich bei Chess960 manchmal die K%C3%B6nigsposition nicht %C3%A4ndert oder auch nur um ein Feld verschoben ist , klickt man f%C3%BCr die Rochade zuerst auf den K%C3%B6nig und dann auf den Turm. Mit Position 518 wird eine klassiche Schachpartie gestartet, bekannt auch unter Langweilerschach. Bei Chess960 wird die Positionsnummer entweder von 0 bis 959 oder von 1 bis 960 angegeben. Bei Halbzug kann die Tiefe der Zugberechnung eingestellt werden")
     if (Rmodi)
-        s1 = decodeURI("Hilfe\nWenn man die Anzahl aller m%C3%B6glichen Varianten wissen m%C3%B6chte, darf man die Checkbox \"Nur notwendige Varianten\" nicht ankreuzen. Um ein neues R%C3%A4tsel einzugeben, zuerst den Button Leeren anklicken und dann die Figuren aufstellen, indem man auf eine Figur unterhalb des Brett klickt, und wenn diese gelb erscheint auf ein Feld auf dem Brett klickt");
+        s1 = decodeURI("Hilfe\n Z%C3%BCge ausprobieren  ist noch nicht m%C3%Bglich. Wenn man die Anzahl aller m%C3%B6glichen Varianten wissen m%C3%B6chte, darf man die Checkbox \"Nur notwendige Varianten\" nicht ankreuzen. Um ein neues R%C3%A4tsel einzugeben, zuerst den Button Leeren anklicken und dann die Figuren aufstellen, indem man auf eine Figur (oder auf das Leerfeld rechts) unterhalb des Brett klickt, und wenn diese gelb erscheint auf ein Feld auf dem Brett klickt");
     alert(s1);
 }
 function Nr960() {
@@ -108,7 +108,8 @@ function init(Nr96) {
        /* hFeld[1][0] = "wp";
         hFeld[2][6] = "wk";
         hFeld[0][7] = "bk";*/
-        
+
+        /*Langes Matt in4
         hFeld[0][0] = "bk";
         hFeld[0][2] = "wk";
         hFeld[1][0] = "bb";
@@ -118,8 +119,19 @@ function init(Nr96) {
         hFeld[2][1] = "bp";
         hFeld[3][1] = "wp";
         hFeld[3][4] = "wn";
-        hFeld[6][6] = "bn";
+        hFeld[6][6] = "bn";*/
+
+        hFeld[4][0] = "bk";
+        hFeld[2][1] = "wk";
+        hFeld[2][3] = "wb";
+        hFeld[4][4] = "wn";
+        hFeld[5][2] = "wr";
+        hFeld[6][2] = "bn";
+        hFeld[7][0] = "bn";
+
         return hFeld;
+
+
     }
     hFeld[1] = ["bp", "bp", "bp", "bp", "bp", "bp", "bp", "bp"];
     hFeld[6] = ["wp", "wp", "wp", "wp", "wp", "wp", "wp", "wp"];
@@ -230,7 +242,7 @@ function Loesen() {
 
  //   document.getElementById("p1").innerText = "Anzahl L\u00f6sungen:" + AnzLoesungen + "\n" + document.getElementById("p1").innerText;
 
- //   document.getElementById("p1").innerText += "\n" + "Rechenzeit:" + (new Date() - currentTime).toString() + "ms" + "\n";
+ //   document.getElementById("p1").innerText += "\n" + "Rechenzeit:" + (new Date() - currentTime).toString() + " Millisekundenen" + "\n";
     //document.getElementById("p1").innerText += "\n" + "F";
 
     let ersterZuege = [];
@@ -248,7 +260,7 @@ function Loesen() {
     for (let ii = 0; ii < ersterZuege.length; ii++) {
         ss1 += ZuginSyntax(ersterZuege[ii]) + "\n";
     }
-    ss1 += "Rechenzeit:" + (new Date() - currentTime).toString() + "ms" + "\n";
+    ss1 += "Rechenzeit:" + (new Date() - currentTime).toString() + " Millisekundenen" + "\n";
     ss1 += AnzLoesungen + " Matt-Varianten\n";
     for (let jj = 0; jj < ersterZuege.length; jj++) {
         for (let ii = 0; ii < LoesungsListe.length; ii++) {
@@ -332,9 +344,14 @@ function IMGFill() {
 function FIGIMGFill() {
     // Auswahl Figuren
     for (let jj = 0; jj < 2; jj++) {
-        for (let ii = 0; ii < 6; ii++) {
+        for (let ii = 0; ii < 7; ii++) {
             para = document.createElement("img");
-            hs = "figuren\\" + Farben[jj] + Figuren[ii] + ".png";
+            if (ii == 6) {
+                hs = "figuren\\" + "ll" + ".png";
+            }
+            else {
+                hs = "figuren\\" + Farben[jj] + Figuren[ii] + ".png";
+            }
             para.src = hs;
             para.style.backgroundColor = 'lightgray';
             para.id = "FIGID" + jj + ii;
@@ -358,11 +375,15 @@ function FIGIMGFill() {
 
 }
 function IMGClick(yy, xx) {
-    if (Rmodi) {
-        sFeld[yy][xx] = "ll";
+    if (Rmodi) {        
         if (FSmarkxx != -1) {
-            let hs = Farben[FSmarkyy] + Figuren[FSmarkxx];
-            sFeld[yy][xx] = hs;
+            if (FSmarkxx == 6) {
+                sFeld[yy][xx] = "ll";
+            }
+            else {
+                let hs = Farben[FSmarkyy] + Figuren[FSmarkxx];
+                sFeld[yy][xx] = hs;
+            }
         }
         IMGFill();
         FIGIMGFill();
