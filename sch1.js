@@ -18,7 +18,9 @@ const Farben = "wb";
 function help1() {
     var s1 = decodeURI("Hilfe\nF%C3%BCr einen Zug zuerst auf das Startfeld und dann auf das Endfeld des Zuges klicken. Da sich bei Chess960 manchmal die K%C3%B6nigsposition nicht %C3%A4ndert oder auch nur um ein Feld verschoben ist , klickt man f%C3%BCr die Rochade zuerst auf den K%C3%B6nig und dann auf den Turm. Mit Position 518 wird eine klassiche Schachpartie gestartet, bekannt auch unter Langweilerschach. Bei Chess960 wird die Positionsnummer entweder von 0 bis 959 oder von 1 bis 960 angegeben. Bei Halbzug kann die Tiefe der Zugberechnung eingestellt werden")
     if (Rmodi)
-        s1 = decodeURI("Hilfe\n Z%C3%BCge ausprobieren  ist noch nicht m%C3%Bglich. Wenn man die Anzahl aller m%C3%B6glichen Varianten wissen m%C3%B6chte, darf man die Checkbox \"Nur notwendige Varianten\" nicht ankreuzen. Um ein neues R%C3%A4tsel einzugeben, zuerst den Button Leeren anklicken und dann die Figuren aufstellen, indem man auf eine Figur (oder auf das Leerfeld rechts) unterhalb des Brett klickt, und wenn diese gelb erscheint auf ein Feld auf dem Brett klickt");
+        //s1 = decodeURI("Hilfe\n Z%C3%BCge ausprobieren");
+        s1 = decodeURI("Hilfe\n Z%C3%BCge ausprobieren  ist noch nicht m%C3%B6glich. Wenn man die Anzahl aller m%C3%B6glichen Varianten wissen m%C3%B6chte, darf man die Checkbox \"Nur notwendige Varianten\" nicht ankreuzen. Um ein neues R%C3%A4tsel einzugeben, zuerst den Button Leeren anklicken und dann die Figuren aufstellen, indem man auf eine Figur ,oder auf das Leerfeld rechts, unterhalb des Brett klickt, und wenn diese gelb erscheint auf ein Feld auf dem Brett klickt");
+       // s1 = decodeURI("aaa");
     alert(s1);
 }
 function Nr960() {
@@ -515,12 +517,14 @@ function nurRaetsel() {
     document.getElementById("container2").style.position = "absolute";
     document.getElementById("Leeren").style.fontSize = hss;
     document.getElementById("Loesen").style.fontSize = hss;
+    document.getElementById("Anleitung").style.fontSize = hss;
     document.getElementById("MattIn").style.fontSize = hss;
     document.getElementById("Nur").style.fontSize = hss;
     document.getElementById("MattIn").value = "M" + MattNachTeilzuegen / 2;  
     
     document.getElementById("Leeren").style.width = hww; 
     document.getElementById("Loesen").style.width = hww;
+    document.getElementById("Anleitung").style.width = hww;
     document.getElementById("MattIn").style.width = BrettHW * 0.38 + "px"; 
     document.getElementById("NurCh").style.width = hss;
     document.getElementById("NurCh").style.height = hss;
