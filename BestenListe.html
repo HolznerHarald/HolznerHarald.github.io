@@ -2,10 +2,19 @@
 <html>
 <body>
 
-    <h1> Bestenliste</h1>
+    <h1 id="Ueber"> Bestenliste</h1>
 
     <p id="BestL">leer</p>
     <script>
+        Hoehe = window.innerHeight;   // clientHeight ohne horizontale scrollbar 
+        let Weite = window.innerWidth;
+        let BrettHW = Math.min(Hoehe / 2, Weite);
+        let hss = (BrettHW / 22) + "px";
+        let hss1 = (BrettHW / 11) + "px";
+        document.getElementById("Ueber").style.fontSize = hss1;
+        document.getElementById("BestL").style.fontSize = hss;
+
+
         let BestenListe = "";
         //document.getElementById("BestL").innerHTML = "Punkte   Zeipunkt";
         document.getElementById("BestL").innerHTML = "";
