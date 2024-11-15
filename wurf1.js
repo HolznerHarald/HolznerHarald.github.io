@@ -1,3 +1,6 @@
+// <button onclick="window.location.href='/css_page.html'">CSS page</button>
+// statt next58()
+
 // todos Würfelfotos, letzten Wurf anzeigen, zurücknehmen
 
 // JavaScript source code

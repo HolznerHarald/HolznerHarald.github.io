@@ -18,12 +18,14 @@
     </div>
     <div id="container">
         <button id="Startbutton" type="button" onclick="Start()">Start</button>
-        <button id="Anleitung" type="button" onclick="alert(decodeURI('Version V1.24 W%C3%BCrfel-Poker mit 5 Spalten:  In die Felder kann in beliebiger Reihenfolge eingetragen werden, mit Ausnahme der 1. und 5.Spalte. Die 1. muss von oben der Reihe nach befüllt werden, die 5. von unten . Bei servierte Figuren zählt jeder Eintrag doppelt, auch in den oberen Feldern. Wenn man in einer Spalte in den oberen 5 Feldern 70 Punkte erreicht bekommt man 45 Zusatzpunkte, in den Randspalten 60.'))">Anleitung</button>
-        <button id="Teste: 58 Wuerfe" type="button" onclick="next58()">Bestenliste</button>
+        <button id="Anleitung" type="button" onclick="alert(decodeURI('Version V1.25 W%C3%BCrfel-Poker mit 5 Spalten:  In die Felder kann in beliebiger Reihenfolge eingetragen werden, mit Ausnahme der 1. und 5.Spalte. Die 1. muss von oben der Reihe nach befüllt werden, die 5. von unten . Bei servierte Figuren zählt jeder Eintrag doppelt, auch in den oberen Feldern. Wenn man in einer Spalte in den oberen 5 Feldern 70 Punkte erreicht bekommt man 45 Zusatzpunkte, in den Randspalten 60.'))">Anleitung</button>
+        <!--  statt next58()  -->
+        <!--  <button id="Teste: 58 Wuerfe" type="button" onclick="next58()">Bestenliste</button> -->
+        <button id="Teste: 58 Wuerfe" type="button" onclick="window.location.href='BestenListe.html'">Bestenliste</button>
         <div id="Infos">
             <p id="Anz1">Anzahl Würfe:0</p>
             <p id="Anz2">Anzahl im Wurf:0</p>
-            <p id="Servieren">serviert</p>            
+            <p id="Servieren">serviert</p>
         </div>
         <i class="fa fa-bars" id="ic1" style="font-size:24px" onclick="F2()"></i>
         <i class="fa fa-window-close" id="ic2" style="font-size:24px" onclick="F2()"></i>
