@@ -36,10 +36,9 @@ function nextbutton() {
 }
 function next58() {
 
-    const myWindow = window.open("BestenListe.html", "", "width=2000,height=1000");
-    myWindow.focus();
-
-    return;   // for test remove !!!
+   // const myWindow = window.open("BestenListe.html", "", "width=2000,height=1000");
+   // myWindow.focus();
+   // return;   // for test remove !!!
 
     for (let ii = 1; ii < 6; ii++) {
         for (let jj = 0; jj < 13; jj++) {
