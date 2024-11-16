@@ -18,12 +18,12 @@ function feldclick(rnr, snr) {
 let hoehe = window.innerHeight;   
 let Weite = window.innerWidth;
 
-let hh = hoehe / 2 + "px";
+let hh = hoehe / 4 + "px";
 document.getElementById("container").style.position = "absolute";
 document.getElementById("container1").style.margin = "0px 0px 0px 0px";
 document.getElementById("tZettel").style.margin = "0px 0px 0px 0px";
 document.getElementById("tZettel").style.width = "200%";
-document.getElementById("tZettel").style.height = hh; 
+//document.getElementById("tZettel").style.height = hh; 
 document.getElementById("tZettel").children[0].children[1].children[1].style.border = "0";
 document.getElementById("container1").style.position = "fixed";
 
