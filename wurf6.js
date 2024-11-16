@@ -17,6 +17,7 @@ function feldclick(rnr, snr) {
 //*****************Main Prozedur **********************/
 let hoehe = window.innerHeight;   
 let Weite = window.innerWidth;
+document.getElementById("tZettel").style.width = Weite;
 
 let hh = hoehe / 4 + "px";
 document.getElementById("container").style.position = "absolute";
