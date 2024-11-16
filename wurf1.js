@@ -323,11 +323,11 @@ let glAnz2 = 0
 let ZahlenAnzahl = [0, 0, 0, 0, 0, 0]
 //document.getElementById("tZettel").style.fontSize = hhF;
 let hhF = hoehe / 35 + "px";
-document.getElementsByTagName('body')[0].style.fontSize = hoeheFont;
-document.getElementsByTagName('button')[0].style.fontSize = hoeheFont;
-document.getElementsByTagName('button')[1].style.fontSize = hoeheFont;
-document.getElementsByTagName('button')[2].style.fontSize = hoeheFont;
-document.getElementsByTagName('button')[3].style.fontSize = hoeheFont;
+document.getElementsByTagName('body')[0].style.fontSize = hhF;
+document.getElementsByTagName('button')[0].style.fontSize = hhF;
+document.getElementsByTagName('button')[1].style.fontSize = hhF;
+document.getElementsByTagName('button')[2].style.fontSize = hhF;
+document.getElementsByTagName('button')[3].style.fontSize = hhF;
 let hhF2 = hoehe / 10 + "px";
 
 let BrettHW = Math.min(hoehe / 2, Weite);

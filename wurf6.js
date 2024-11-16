@@ -29,5 +29,5 @@ document.getElementById("container").style.position = "fixed";
 document.getElementById("tZettel").style.position = "absolute";
 document.getElementById("tZettel").style.top = hoehe / 4 + "px";
 
-let hoeheFont = hoehe / 35 + "px";
-document.getElementsByTagName('body')[0].style.fontSize = hoeheFont;
+let hhF = hoehe / 35 + "px";
+document.getElementsByTagName('body')[0].style.fontSize = hhF;
