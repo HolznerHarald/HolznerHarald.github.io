@@ -15,9 +15,9 @@ for (let ii = 1; ii < 6; ii++) {
 function feldclick(rnr, snr) {
 }
 //*****************Main Prozedur **********************/
-let hoehe = window.innerHeight;   // clientHeight ohne horizontale scrollbar
-//let hoehe = window.outerHeight;   // clientHeight ohne horizontale scrollbar
+let hoehe = window.innerHeight;   
 let Weite = window.innerWidth;
+
 let hh = hoehe / 2 + "px";
 document.getElementById("container").style.margin = "0px 0px 0px 0px";
 document.getElementById("tZettel").style.margin = "0px 0px 0px 0px";
@@ -28,3 +28,6 @@ document.getElementById("container").style.position = "fixed";
 
 document.getElementById("tZettel").style.position = "absolute";
 document.getElementById("tZettel").style.top = hoehe / 4 + "px";
+
+let hoeheFont = hoehe / 35 + "px";
+document.getElementsByTagName('body')[0].style.fontSize = hoeheFont;
