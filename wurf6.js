@@ -23,6 +23,7 @@ let hhF = Math.round(hoehe / 35) + "px";
 //document.getElementsByTagName('body')[0].style.fontSize = hhF;
 
 document.getElementById("Servieren").style.fontSize = hhF;
+document.getElementById("tZettel").style.fontSize = hhF;
 
 let hh = hoehe*0.7 + "px";
 let htop = hoehe * 0.3   + "px";
