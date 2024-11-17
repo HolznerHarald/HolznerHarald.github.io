@@ -17,19 +17,29 @@ function feldclick(rnr, snr) {
 //*****************Main Prozedur **********************/
 let hoehe = window.innerHeight;   
 let Weite = window.innerWidth;
-document.getElementById("tZettel").style.width = Weite;
 
-let hh = hoehe / 4 + "px";
+let hh = hoehe*0.7 + "px";
+let htop = hoehe * 0.3   + "px";
 document.getElementById("container").style.position = "absolute";
-document.getElementById("container1").style.margin = "0px 0px 0px 0px";
-document.getElementById("tZettel").style.margin = "0px 0px 0px 0px";
-document.getElementById("tZettel").style.width = "200%";
-//document.getElementById("tZettel").style.height = hh; 
-document.getElementById("tZettel").children[0].children[1].children[1].style.border = "0";
-document.getElementById("container1").style.position = "fixed";
+document.getElementById("tZettel").style.position = "absolute"
+document.getElementById("tZettel").style.top = htop;
+document.getElementById("tZettel").style.height = hh;
 
-document.getElementById("tZettel").style.position = "absolute";
-document.getElementById("tZettel").style.top = hoehe / 4 + "px";
-
-let hhF = hoehe / 35 + "px";
-document.getElementsByTagName('body')[0].style.fontSize = hhF;
+let skalFaktor = 20;
+document.getElementById("Servieren").style.position = "fixed";
+document.getElementById("Servieren").style.top = "0px";
+document.getElementById("Servieren2").style.position = "fixed";
+let hs = hoehe / skalFaktor + "px";
+document.getElementById("Servieren2").style.top = hs;
+document.getElementById("Servieren3").style.position = "fixed";
+hs = 2*hoehe / skalFaktor + "px";
+document.getElementById("Servieren3").style.top = hs;
+document.getElementById("Servieren4").style.position = "fixed";
+hs = 3*hoehe / skalFaktor + "px";
+document.getElementById("Servieren4").style.top = hs;
+document.getElementById("Servieren5").style.position = "fixed";
+hs = 4*hoehe / skalFaktor + "px";
+document.getElementById("Servieren5").style.top = hs;
+document.getElementById("Servieren6").style.position = "fixed";
+hs = 5*hoehe / skalFaktor + "px";
+document.getElementById("Servieren6").style.top = hs;
