@@ -1,7 +1,9 @@
 ﻿
 #tZettel {
     overflow-x: scroll;
-    overflow-y: scroll;
+    overflow-y: scroll;   
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
 }
 
 #tZettel td {

@@ -27,11 +27,11 @@ let hh = hoehe*0.7 + "px";
 let htop = hoehe * 0.3   + "px";
 document.getElementById("container").style.position = "absolute";
 document.getElementById("tZettel").style.position = "absolute"
-let hWeite = 3 * Weite + "px";
+let hWeite = 4 * Weite + "px";
 document.getElementById("tZettel").style.minWidth = hWeite;
 //document.getElementById("tZettel").style.overflow-x
 document.getElementById("tZettel").style.top = htop;
-document.getElementById("tZettel").style.minHeight = hh;
+//document.getElementById("tZettel").style.minHeight = hh;
 
 let skalFaktor = 20;
 document.getElementById("Servieren").style.position = "fixed";
