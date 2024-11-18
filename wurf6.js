@@ -31,7 +31,7 @@ let hWeite = 3 * Weite + "px";
 document.getElementById("tZettel").style.width = hWeite;
 //document.getElementById("tZettel").style.overflow-x
 document.getElementById("tZettel").style.top = htop;
-document.getElementById("tZettel").style.height = hh;
+document.getElementById("tZettel").style.minHeight = hh;
 
 let skalFaktor = 20;
 document.getElementById("Servieren").style.position = "fixed";
