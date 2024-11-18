@@ -19,7 +19,7 @@ let hoehe = window.innerHeight;
 let Weite = window.innerWidth;
 
 let hhF = hoehe / 35 + "px";
-//document.getElementsByTagName('body')[0].style.fontSize = hhF;
+document.getElementsByTagName('body')[0].style.fontSize = hhF;
 document.getElementById("Servieren").style.fontSize = hhF;
 
 
