@@ -1,6 +1,10 @@
 ﻿
-#tZettel td {
-    border-style: solid;
-    /*width: 14%;*/
+#tZettel {
+    overflow-x: scroll;
+    overflow-y: scroll;
 }
 
+#tZettel td {
+    border-style: solid;    
+    /*width: 14%;*/
+}

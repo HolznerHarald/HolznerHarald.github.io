@@ -28,7 +28,8 @@ let htop = hoehe * 0.3   + "px";
 document.getElementById("container").style.position = "absolute";
 document.getElementById("tZettel").style.position = "absolute"
 let hWeite = 2 * Weite + "px";
-document.getElementById("tZettel").style.width = hWeite;
+//document.getElementById("tZettel").style.width = hWeite;
+//document.getElementById("tZettel").style.overflow-x
 document.getElementById("tZettel").style.top = htop;
 document.getElementById("tZettel").style.height = hh;
 
