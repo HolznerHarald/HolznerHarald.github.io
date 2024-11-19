@@ -31,7 +31,7 @@ let hs = 1*hoehe / skalFaktor + "px";
 document.getElementById("tWurf").style.top = hs;
 
 let hh = hoehe * 0.7 + "px";
-let htop = hoehe * 0.3 + "px";
+let htop = hoehe * 0.5 + "px";
 document.getElementById("tZettel").style.position = "absolute"
 let hWeite = 4 * Weite + "px";
 document.getElementById("tZettel").style.minWidth = hWeite;
