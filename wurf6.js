@@ -19,7 +19,7 @@ let hoehe = window.innerHeight;
 let Weite = window.innerWidth;
 
 let hhF = hoehe / 35 + "px";
-let hhF3 = hoehe / 25 + "px";
+let hhF3 = hoehe / 15 + "px";
 document.getElementsByTagName('body')[0].style.fontSize = hhF;
 document.getElementsByTagName('td')[0].style.height = hhF3;
 document.getElementById("container").style.position = "absolute";
