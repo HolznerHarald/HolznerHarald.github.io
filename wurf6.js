@@ -19,9 +19,18 @@ let hoehe = window.innerHeight;
 let Weite = window.innerWidth;
 
 let hhF = hoehe / 35 + "px";
-let hhF3 = hoehe / 15 + "px";
 document.getElementsByTagName('body')[0].style.fontSize = hhF;
-document.getElementsByTagName('td')[0].style.height = hhF3;
+
+let hhF3 = hoehe / 15 + "px";
+document.getElementsByTagName('tr')[0].style.height = hhF3;
+document.getElementsByTagName('tr')[1].style.height = hhF3;
+document.getElementsByTagName('tr')[4].style.height = hhF3;
+hhF3 = hoehe / 10 + "px";
+document.getElementsByTagName('tr')[2].style.height = hhF3;
+hhF3 = hoehe / 25 + "px";
+document.getElementsByTagName('tr')[2].style.fontSize = hhF3;
+
+
 document.getElementById("container").style.position = "absolute";
 document.getElementById("container1").style.position = "fixed";
 
