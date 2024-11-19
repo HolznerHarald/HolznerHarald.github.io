@@ -3,7 +3,7 @@
     overflow-x: scroll;
     overflow-y: scroll;   
     height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
+    height: calc(var(--vh, 1vh) * 70);
 }
 
 #tZettel td {
@@ -13,4 +13,6 @@
 #tWurf td {
     border-style: solid;
     width: 14%;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 5);
 }
