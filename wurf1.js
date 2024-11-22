@@ -29,9 +29,6 @@ function Start() {
     nextthrow()
 }
 function nextbutton() {
-    if (Anz2 == 0 || Anz2 == 3)
-        nextthrow();
-    else
         nextsubthrow();
 }
 function next58() {
