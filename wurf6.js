@@ -69,15 +69,15 @@ function feldclick(rnr, snr) {
         alert("Zuerst Start-Button anklicken!")
         return;
     }
-    if (document.getElementById("tZettel").children[0].children[rnr - 1].children[snr-1].style.background == "red") {
+    if (document.getElementById("tZettel").children[0].children[rnr - 1].children[snr - 1].style.background == "lightgrey") {
         alert("Feld ist bereits beschrieben!")
         return;
     }
-    if (document.getElementById("tZettel").children[0].children[rnr - 1].children[snr-1].style.background == "grey") {
+    if (document.getElementById("tZettel").children[0].children[rnr - 1].children[snr-1].style.background == "lightgrey") {
         alert("1.Reihe von oben der Reihe nach,5.Reihe von unten der Reihe nach")
         return;
     }
-    document.getElementById("tZettel").children[0].children[rnr - 1].children[snr-1].style.background = "red";
+    document.getElementById("tZettel").children[0].children[rnr - 1].children[snr - 1].style.background = "lightgrey";
     if (modsnr == 1 && rnr <= 12) {
         document.getElementById("tZettel").children[0].children[rnr].children[snr-1].style.background = "white";
         if (rnr == 6)
@@ -244,7 +244,7 @@ function BestimmeZahlenAnzahl() {
 function formate() {
     document.getElementById("container").style.position = "absolute";
     document.getElementById("container1").style.position = "fixed";
-
+    document.getElementById("container").style.textAlign = "center";
     // oberer Teil Format
     let skalFaktor = 20;
 
@@ -265,7 +265,7 @@ function formate() {
     document.getElementsByTagName('tr')[3].style.height = hhF3;
     //Font
     document.getElementsByTagName('tr')[2].style.fontSize = hhF3;
-
+    document.getElementById("tZettel").style.fontSize = hhF3;
     // Borders
     document.getElementsByTagName('tr')[1].children[0].style.border = "none";
     document.getElementsByTagName('tr')[1].children[1].style.border = "none";
@@ -301,7 +301,7 @@ function init() {
         for (let ii = 0; ii < 5; ii++) {
             for (let jj = 0; jj < 13; jj++) {
                 if ((ii == 0 && jj > 0) || (ii == 4 && jj < 12))
-                    document.getElementById("tZettel").children[0].children[jj].children[ii+RV].style.background = "grey";
+                    document.getElementById("tZettel").children[0].children[jj].children[ii + RV].style.background = "lightgrey";
                 else
                     document.getElementById("tZettel").children[0].children[jj].children[ii+RV].style.background = "white";
             }
@@ -325,7 +325,7 @@ function next180() {
         for (let ii = 0; ii < 5; ii++) {
             for (let jj = 0; jj < 13; jj++) {
                 document.getElementById("tZettel").children[0].children[jj].children[ii + RV].innerHTML = 12;
-                document.getElementById("tZettel").children[0].children[jj].children[ii + RV].style.background = "red";
+                document.getElementById("tZettel").children[0].children[jj].children[ii + RV].style.background = "lightgrey";
             }
         }
     }
