@@ -4,19 +4,23 @@ function Start() {
     // Start- Next-Button
     document.getElementById("tWurf").children[0].children[0].children[0].style.visibility = "hidden";
     document.getElementById("tWurf").children[0].children[2].children[5].style.visibility = "visible";
+
+    for (kk = 0; kk < 18;kk++)
+        document.getElementById("tZettel").children[0].children[6].children[kk].style.visibility = "hidden";
+
     nextthrow();
 }
 function nextthrow() {
     document.getElementById("tWurf").children[0].children[3].children[5].innerHTML = "serviert";
     glAnz1++;
     glAnz2 = 1;
-    document.getElementById("tWurf").children[0].children[1].children[3].style.innerHTML = glAnz1;
-    document.getElementById("tWurf").children[0].children[1].children[1].style.innerHTML = glAnz2;
+    document.getElementById("tWurf").children[0].children[1].children[3].innerHTML = glAnz1;
+    document.getElementById("tWurf").children[0].children[1].children[1].innerHTML = glAnz2;
     document.getElementById("tWurf").children[0].children[2].children[5].style.visibility = "visible";
 
     for (let ii = 0; ii < 5; ii++) {
         document.getElementById("tWurf").children[0].children[3].children[ii].innerHTML = "unfixed";
-        document.getElementById("tWurf").children[0].children[3].children[ii].style.background = "white";
+        document.getElementById("tWurf").children[0].children[2].children[ii].style.background = "white";
         document.getElementById("tWurf").children[0].children[2].children[ii].innerHTML = rand6();
     }
 }
@@ -29,7 +33,7 @@ function nextbutton() {
 }
 function nextsubthrow() {
     glAnz2++;
-    document.getElementById("tWurf").children[0].children[1].children[1].style.innerHTML = glAnz2;
+    document.getElementById("tWurf").children[0].children[1].children[1].innerHTML = glAnz2;
     if (glAnz2 == 3)
         document.getElementById("tWurf").children[0].children[2].children[5].style.visibility = "hidden";
     let serviert = true;
@@ -42,33 +46,14 @@ function nextsubthrow() {
     if (serviert)
         document.getElementById("tWurf").children[0].children[3].children[5].innerHTML = "serviert";
     else
-        document.getElementById("tWurf").children[0].children[3].children[5].innerHTML = "serviert";
+        document.getElementById("tWurf").children[0].children[3].children[5].innerHTML = "nicht serviert";
 }
 function TZettelFormat() {
-    const tabelle = document.getElementById('tZettel');
-    // schreibe Tabellenzeile
-   /* for (var ii = 0; ii < 14; ii++) {
-        const reihe = tabelle.insertRow(0);
-        for (var jj = 0; jj < 18; jj++) {
-            let para = document.createElement("td");
-            let inhalt = 'R' + (ii + 1) + "S" + (jj + 1);            
-            para.innerHTML = inhalt;
-            para.id = "FIGID" + jj + ii;
-            para.onclick = function () { feldclick(2,jj, ii) };
-            reihe.appendChild(para);
-        }
-    }*/
-    /*
-    for (var ii = 0; ii < 14; ii++) {
-        for (var jj = 0; jj < 18; jj++) {
-            document.getElementById('tZettel').children[0].children[ii].children[jj].onclick=function() { feldclick(1, jj, ii) };
-        }
-    }*/
 
     for (let jj = 0; jj < 14; jj++) {
-        document.getElementById("tZettel").children[0].children[jj].children[5].style.background = "grey";
-        document.getElementById("tZettel").children[0].children[jj].children[11].style.background = "grey";
-        document.getElementById("tZettel").children[0].children[jj].children[17].style.background = "grey";
+        document.getElementById("tZettel").children[0].children[jj].children[5].style.background = "lightblue";
+        document.getElementById("tZettel").children[0].children[jj].children[11].style.background = "lightblue";
+        document.getElementById("tZettel").children[0].children[jj].children[17].style.background = "lightblue";
     }
 }
 
@@ -80,7 +65,7 @@ function feldclick(rnr, snr) {
    
     if (modsnr == 6)
         return;
-    if (document.getElementById("Startbutton").style.visibility != "hidden") {
+    if (document.getElementById("tWurf").children[0].children[0].children[0].style.visibility != "hidden") {
         alert("Zuerst Start-Button anklicken!")
         return;
     }
@@ -108,14 +93,14 @@ function feldclick(rnr, snr) {
     let Servierungsfaktor = 1;
     BestimmeZahlenAnzahl();
     let fig = figur();
-    let hserv =document.getElementById("tWurf").children[0].children[3].children[5].innerHTML = "serviert";
+    let hserv =document.getElementById("tWurf").children[0].children[3].children[5].innerHTML;
     if (fig != "nix" && hserv == "serviert")
         Servierungsfaktor = 2;
 
     let summe = 0;
     if (rnr < 7) {
         for (let ii = 0; ii < 5; ii++)
-            if (tds0[ii].innerHTML == rnr)
+            if (document.getElementById("tWurf").children[0].children[2].children[ii].innerHTML == rnr)
                 summe = summe + rnr;
         schreiben(rnr, snr-1, summe * Servierungsfaktor);
         //document.getElementById("tZettel").children[0].children[rnr - 1].children[snr].innerHTML = summe * Servierungsfaktor;
@@ -226,7 +211,7 @@ function ErgebnisBerechnen() {
         for (kk = 0; kk < 3; kk++) {
             //Reihenvorschub
             let RV = kk * 6;
-            Summe1 = Summe1 + document.getElementById("tZettel").children[0].children[13].children[5 + RV].innerHTML;
+            Summe1 = Summe1 + Number(document.getElementById("tZettel").children[0].children[13].children[5 + RV].innerHTML);
         }
         document.getElementById("tWurf").children[0].children[4].children[1].innerHTML = Summe1;
 
@@ -286,7 +271,6 @@ function formate() {
     document.getElementsByTagName('tr')[1].children[1].style.border = "none";
     document.getElementsByTagName('tr')[1].children[2].style.border = "none";
     document.getElementsByTagName('tr')[1].children[3].style.border = "none";
-    document.getElementsByTagName('tr')[3].children[5].style.border = "none";
     document.getElementsByTagName('tr')[4].children[0].style.border = "none";
     document.getElementsByTagName('tr')[4].children[1].style.border = "none";
 
@@ -302,6 +286,54 @@ function formate() {
     let hWeite = 4 * Weite + "px";
     document.getElementById("tZettel").style.minWidth = hWeite;
     document.getElementById("tZettel").style.top = htop;
+}
+function init() {
+    //Wirf! button
+    document.getElementById("tWurf").children[0].children[2].children[5].style.visibility = "hidden";
+    //unfixed
+    for (let ii = 0; ii < 5; ii++) {
+        document.getElementById("tWurf").children[0].children[3].children[ii].innerText = "unfixed";       
+    }
+    // 1., letzte grau, sonst weiß
+    for (kk = 0; kk < 3; kk++) {
+        //Reihenvorschub
+        let RV = kk * 6;
+        for (let ii = 0; ii < 5; ii++) {
+            for (let jj = 0; jj < 13; jj++) {
+                if ((ii == 0 && jj > 0) || (ii == 4 && jj < 12))
+                    document.getElementById("tZettel").children[0].children[jj].children[ii+RV].style.background = "grey";
+                else
+                    document.getElementById("tZettel").children[0].children[jj].children[ii+RV].style.background = "white";
+            }
+        }
+    }
+}
+function tWurfclick(num) {
+    if (document.getElementById("tWurf").children[0].children[3].children[num-1].innerHTML == "unfixed") {
+        document.getElementById("tWurf").children[0].children[3].children[num - 1].innerHTML = "fixed";
+        document.getElementById("tWurf").children[0].children[2].children[num - 1].style.background = "green";
+    }
+    else {
+        document.getElementById("tWurf").children[0].children[3].children[num - 1].innerText = "unfixed";
+        document.getElementById("tWurf").children[0].children[2].children[num - 1].style.background = "white";
+    }
+}
+function next180() {
+    for (kk = 0; kk < 3; kk++) {
+        //Reihenvorschub
+        let RV = kk * 6;
+        for (let ii = 0; ii < 5; ii++) {
+            for (let jj = 0; jj < 13; jj++) {
+                document.getElementById("tZettel").children[0].children[jj].children[ii + RV].innerHTML = 12;
+                document.getElementById("tZettel").children[0].children[jj].children[ii + RV].style.background = "red";
+            }
+        }
+    }
+
+    document.getElementById("tZettel").children[0].children[0].children[0].style.background = "blue";
+    glAnz1 = 180;
+    document.document.getElementById("tZettel").children[0].children[1].children[1].innerHTML = glAnz1;
+
 }
 // komplett gleiche Funktionen wie 1er Reihe
 function schreiben(rnr, snr, wert) {
@@ -337,6 +369,8 @@ function figur() {
 //*****************Main Prozedur **********************/
 TZettelFormat();
 
+//document.getElementById("tZettel").children[0].children[0].children[0].innerHTML = "test";
+
 let hoehe = window.innerHeight;   
 let Weite = window.innerWidth;
 let glAnz1 = 0
@@ -344,5 +378,5 @@ let glAnz2 = 0
 let ZahlenAnzahl = [0, 0, 0, 0, 0, 0]
 
 formate();
-document.getElementById("tWurf").children[0].children[2].children[5].style.visibility = "hidden";
+init();
 
