@@ -69,7 +69,13 @@ function TZettelFormat() {
         document.getElementById("tZettel").children[0].children[jj].children[5].style.background = "lightblue";
         document.getElementById("tZettel").children[0].children[jj].children[11].style.background = "lightblue";
         document.getElementById("tZettel").children[0].children[jj].children[17].style.background = "lightblue";
+        document.getElementById("tZettel").children[0].children[jj].children[5].innerHTML = "";
+        document.getElementById("tZettel").children[0].children[jj].children[11].innerHTML = "";
+        document.getElementById("tZettel").children[0].children[jj].children[17].innerHTML = "";
     }
+    document.getElementById("tZettel").children[0].children[0].children[5].innerHTML = "___";
+    document.getElementById("tZettel").children[0].children[0].children[11].innerHTML = "___";
+    document.getElementById("tZettel").children[0].children[0].children[17].innerHTML = "___";
 }
 
 function feldclick(rnr, snr) {
@@ -78,13 +84,13 @@ function feldclick(rnr, snr) {
     rnr++;
     let modsnr = snr % 6;
    
-    if (modsnr == 6)
+    if (modsnr == 0)
         return;
     if (document.getElementById("tWurf").children[0].children[0].children[0].style.visibility != "hidden") {
         alert("Zuerst Start-Button anklicken!")
         return;
     }
-    if (document.getElementById("tZettel").children[0].children[rnr - 1].children[snr - 1].style.background == "lightgrey") {
+    if (document.getElementById("tZettel").children[0].children[rnr - 1].children[snr - 1].style.background == "dimgrey") {
         alert("Feld ist bereits beschrieben!")
         return;
     }
@@ -92,7 +98,7 @@ function feldclick(rnr, snr) {
         alert("1.Reihe von oben der Reihe nach,5.Reihe von unten der Reihe nach")
         return;
     }
-    document.getElementById("tZettel").children[0].children[rnr - 1].children[snr - 1].style.background = "lightgrey";
+    document.getElementById("tZettel").children[0].children[rnr - 1].children[snr - 1].style.background = "dimgrey";
     if (modsnr == 1 && rnr <= 12) {
         document.getElementById("tZettel").children[0].children[rnr].children[snr-1].style.background = "white";
         if (rnr == 6)
