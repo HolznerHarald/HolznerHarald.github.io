@@ -1,0 +1,50 @@
+﻿#container1 {  
+    /*display: inline;*/
+}
+
+#tZettel {
+    overflow-x: scroll;
+    overflow-y: scroll;   
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+}
+
+#tZettel td {
+    border-style: solid;      
+}
+
+#tWurf td {
+    border-style: solid;
+    width: 14%;    
+}
+
+#ic1 {
+    display: block;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+#ic2 {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+#myLinks {
+    background-color: blue;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: none;
+    z-index: 2;
+}
+
+a {
+    z-index: 2;
+    background-color: blue;
+    display: block;
+    text-decoration: none;
+    color: white;
+}
