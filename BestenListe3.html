@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+
+    <h1 id="Ueber"> Bestenliste für 3 Reihen</h1>
+
+    <p id="BestL">leer</p>
+    <script>
+        Hoehe = window.innerHeight;   // clientHeight ohne horizontale scrollbar 
+        let Weite = window.innerWidth;
+        let BrettHW = Math.min(Hoehe / 2, Weite);
+        let hss = (BrettHW / 22) + "px";
+        let hss1 = (BrettHW / 11) + "px";
+        document.getElementById("Ueber").style.fontSize = hss1;
+        document.getElementById("BestL").style.fontSize = hss;
+
+
+        let BestenListe = "";
+        //document.getElementById("BestL").innerHTML = "Punkte   Zeipunkt";
+        document.getElementById("BestL").innerHTML = "";
+        document.getElementById("BestL").innerHTML += "\n";
+
+        if (localStorage.getItem("BestenListe3") === null) {
+            BestenListe = "keine " + "Einträge";
+            document.getElementById("BestL").innerHTML += "\n" + BestenListe;
+        }
+        else {
+            BestenListe = "";            
+            BestenListe = localStorage.getItem("BestenListe3");
+            let BestArr = BestenListe.split(";");
+            for (var ii = 0; ii < BestArr.length; ii++) {
+                document.getElementById("BestL").innerText += "\n"+ BestArr[ii];
+            }                
+        }                
+    </script>
+</body>
+</html>

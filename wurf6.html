@@ -11,12 +11,17 @@
 
 </head>
 <body>       
-    <div id="container">
+    
+        <div id="myLinks">
+            <a id="a1" href="index.html">   Schach Rätsel   </a>
+            <a id="a2" href="SchachSpiel.html">   Schach spielen   </a>
+            <a id="a3" href="wurf.html">   Würfeln   </a>
+        </div>
         <div id="container1">
             <table id="tWurf">
                 <tr>
                     <td onclick="Start()">Start</td>
-                    <td onclick="feldclick(0,0)">BestenListe</td>
+                    <td onclick="window.location.href='BestenListe3.html'">BestenListe</td>
                     <td onclick="next180()">Test58</td>
                 </tr>
                 <tr>
@@ -43,10 +48,13 @@
                 </tr>
                 <tr>
                     <td>Ergebnis:</td>
-                    <td>V125</td>
+                    <td>V126</td>
                 </tr>
             </table>
+            <i class="fa fa-bars" id="ic1" style="font-size:24px" onclick="F2()"></i>
+            <i class="fa fa-window-close" id="ic2" style="font-size:24px" onclick="F2()"></i>
         </div>
+    <div id="container">
         <table id="tZettel">
             <tr>
                 <td onclick="feldclick(0,0)">NNN</td>

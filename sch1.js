@@ -644,6 +644,7 @@ if (Handy) {
     document.getElementById("a1").style.fontSize = hss1;
     document.getElementById("a2").style.fontSize = hss1;
     document.getElementById("a3").style.fontSize = hss1;
+    document.getElementById("a4").style.fontSize = hss1;
     document.getElementById("ll1").style.fontSize = hss1;
     document.getElementById("ll2").style.fontSize = hss1;
     document.getElementById("ll3").style.fontSize = hss1;
@@ -669,6 +670,7 @@ else {
     document.getElementById("a1").style.display = "inline";
     document.getElementById("a2").style.display = "inline";
     document.getElementById("a3").style.display = "inline";
+    document.getElementById("a4").style.display = "inline";
     
     document.getElementById("p1").style.top = (BrettHW / 3) + (BrettHW / 8) + 20 + "px";
     document.getElementById("p1").style.left = BrettHW + 10 + "px";

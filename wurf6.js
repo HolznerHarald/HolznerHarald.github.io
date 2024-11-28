@@ -1,3 +1,18 @@
+function F2() {
+    var i1 = document.getElementById("ic1");
+    var i2 = document.getElementById("ic2");
+    var x = document.getElementById("myLinks");
+
+    if (x.style.display === "block") {
+        x.style.display = "none";
+        i1.style.display = "block";
+        i2.style.display = "none";
+    } else {
+        x.style.display = "block";
+        i2.style.display = "block";
+        i1.style.display = "none";
+    }
+}
 function Start() {
     if (glAnz1 > 0)
         location.reload();
@@ -223,10 +238,10 @@ function ErgebnisBerechnen() {
         tim2 = tim2.substring(4, 21);
 
         if (localStorage.getItem("BestenListe3") === null) {
-            BestenListe = Summe.toString() + " Punkte um: " + tim2 + ";";
+            BestenListe = Summe1.toString() + " Punkte um: " + tim2 + ";";
         }
         else {
-            BestenListe = BestenListe + Summe.toString() + " Punkte um: " + tim2 + ";";
+            BestenListe = BestenListe + Summe1.toString() + " Punkte um: " + tim2 + ";";
         }
 
         localStorage.setItem("BestenListe3", BestenListe);
@@ -245,6 +260,7 @@ function formate() {
     document.getElementById("container").style.position = "absolute";
     document.getElementById("container1").style.position = "fixed";
     document.getElementById("container").style.textAlign = "center";
+    document.getElementById("container1").style.textAlign = "center";
     // oberer Teil Format
     let skalFaktor = 20;
 
@@ -266,6 +282,7 @@ function formate() {
     //Font
     document.getElementsByTagName('tr')[2].style.fontSize = hhF3;
     document.getElementById("tZettel").style.fontSize = hhF3;
+    document.getElementById("myLinks").style.fontSize = hhF3;
     // Borders
     document.getElementsByTagName('tr')[1].children[0].style.border = "none";
     document.getElementsByTagName('tr')[1].children[1].style.border = "none";
@@ -274,18 +291,30 @@ function formate() {
     document.getElementsByTagName('tr')[4].children[0].style.border = "none";
     document.getElementsByTagName('tr')[4].children[1].style.border = "none";
 
+    //unterer Teil Format
+
     for (var jj = 0; jj < 18; jj++) {
-        if(jj%6 !=5 )
+        //document.getElementById("tZettel").children[0].children[2].children[jj].style.borderBottomColor = "lightblue";
+        document.getElementById("tZettel").children[0].children[2].children[jj].style.borderBottomWidth = "thick";
+        document.getElementById("tZettel").children[0].children[8].children[jj].style.borderBottomWidth = "thick";
+        document.getElementById("tZettel").children[0].children[10].children[jj].style.borderBottomWidth = "thick";
+         
+        //document.getElementById("tZettel").children[0].children[2].children[jj].style.borderBottomStyle = "double";
+        if (jj % 6 != 5)
             document.getElementById("tZettel").children[0].children[13].children[jj].style.border = "none";
     }
 
-    //unterer Teil Format
+    
     let hh = hoehe * 0.7 + "px";
     let htop = hoehe * 0.3 + "px";
     document.getElementById("tZettel").style.position = "absolute"
-    let hWeite = 4 * Weite + "px";
+    let hWeite = 0.5*Weite + "px";
+    if (Handy)
+        hWeite = 4 * Weite + "px";
+   
     document.getElementById("tZettel").style.minWidth = hWeite;
     document.getElementById("tZettel").style.top = htop;
+    
 }
 function init() {
     //Wirf! button
@@ -373,10 +402,23 @@ TZettelFormat();
 
 let hoehe = window.innerHeight;   
 let Weite = window.innerWidth;
+let Handy = true;
+if (Weite > hoehe * 1.2) {
+    Handy = false;
+}
+
 let glAnz1 = 0
 let glAnz2 = 0
 let ZahlenAnzahl = [0, 0, 0, 0, 0, 0]
 
 formate();
 init();
+//let vh = window.innerHeight * 0.02;
+
+let hhF4 = hoehe / 35 + "px";
+if (!Handy) {
+    document.documentElement.style.setProperty('--vh', '${vh}px');
+    document.getElementById("tZettel").style.fontSize = hhF4;
+}
+
 
