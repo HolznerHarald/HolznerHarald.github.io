@@ -367,7 +367,7 @@ function next180() {
 
     document.getElementById("tZettel").children[0].children[0].children[0].style.background = "blue";
     glAnz1 = 180;
-    document.document.getElementById("tZettel").children[0].children[1].children[1].innerHTML = glAnz1;
+    document.getElementById("tWurf").children[0].children[1].children[1].innerHTML = glAnz1;
 
 }
 // komplett gleiche Funktionen wie 1er Reihe

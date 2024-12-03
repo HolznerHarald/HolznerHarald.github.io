@@ -3,16 +3,19 @@
 }
 
 #tZettel {
-    overflow-x: scroll;
-    overflow-y: scroll;   
+    width: 80%;
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
 }
 
-#tZettel td {
-    border-style: solid;      
-}
+    #tZettel td {
+        border-style: solid;
+        width: 14%;
+    }
 
+#tWurf {
+    width: 80%;
+}
 #tWurf td {
     border-style: solid;
     width: 14%;    
