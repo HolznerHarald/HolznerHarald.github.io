@@ -320,7 +320,22 @@ function formate() {
    
     document.getElementById("tZettel").style.minWidth = hWeite;
     document.getElementById("tZettel").style.top = htop;
-    
+
+    //Menu Format
+    let BrettHW = Math.min(hoehe / 2, Weite);
+    if (Weite > hoehe * 1.2)
+        BrettHW = 0.75 * (hoehe - 20);
+    let hss1 = (BrettHW / 11) + "px";
+
+    document.getElementById("myLinks").style.width = BrettHW * 0.8 + "px";
+
+    document.getElementById("ic1").style.fontSize = hss1;
+    document.getElementById("ic2").style.fontSize = hss1;
+    document.getElementById("a1").style.fontSize = hss1;
+    document.getElementById("a2").style.fontSize = hss1;
+    document.getElementById("a3").style.fontSize = hss1;
+    document.getElementById("a4").style.fontSize = hss1;
+
 }
 function init() {
     //Wirf! button

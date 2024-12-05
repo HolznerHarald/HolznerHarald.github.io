@@ -339,6 +339,7 @@ document.getElementById("ic2").style.fontSize = hss1;
 document.getElementById("a1").style.fontSize = hss1;
 document.getElementById("a2").style.fontSize = hss1;
 document.getElementById("a3").style.fontSize = hss1;
+document.getElementById("a4").style.fontSize = hss1;
 
 document.getElementById("container").style.position = "absolute";
 

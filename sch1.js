@@ -645,9 +645,12 @@ if (Handy) {
     document.getElementById("a2").style.fontSize = hss1;
     document.getElementById("a3").style.fontSize = hss1;
     document.getElementById("a4").style.fontSize = hss1;
+    document.getElementById("a5").style.fontSize = hss1;
     document.getElementById("ll1").style.fontSize = hss1;
     document.getElementById("ll2").style.fontSize = hss1;
     document.getElementById("ll3").style.fontSize = hss1;
+    document.getElementById("ll4").style.fontSize = hss1;
+    document.getElementById("ll5").style.fontSize = hss1;
 
     document.getElementById("container").style.top = BrettHW * 0.01 + "px";
     document.getElementById("container").style.left = BrettHW * 0.01 + "px";
@@ -661,6 +664,8 @@ if (Handy) {
     document.getElementById("ll1").style.display = "none";
     document.getElementById("ll2").style.display = "none";
     document.getElementById("ll3").style.display = "none";   
+    document.getElementById("ll4").style.display = "none";   
+    document.getElementById("ll5").style.display = "none";   
 }
 else {
     document.getElementById("container").style.top = 20 + "px";
@@ -671,6 +676,7 @@ else {
     document.getElementById("a2").style.display = "inline";
     document.getElementById("a3").style.display = "inline";
     document.getElementById("a4").style.display = "inline";
+    document.getElementById("a5").style.display = "inline";
     
     document.getElementById("p1").style.top = (BrettHW / 3) + (BrettHW / 8) + 20 + "px";
     document.getElementById("p1").style.left = BrettHW + 10 + "px";

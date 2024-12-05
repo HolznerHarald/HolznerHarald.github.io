@@ -32,7 +32,8 @@ function Start() {
     document.getElementById("tWurf").children[0].children[0].children[0].style.visibility = "hidden";
     document.getElementById("tWurf").children[0].children[2].children[6].style.visibility = "visible";
 
-    for (kk = 0; kk < 6;kk++)
+    document.getElementById("tZettel").children[0].children[6].children[0].innerHTML = "ab 85";
+    for (kk = 1; kk < 7;kk++)
         document.getElementById("tZettel").children[0].children[6].children[kk].style.visibility = "hidden";
 
     nextthrow();
@@ -73,7 +74,7 @@ function nextsubthrow() {
     if (serviert)
         document.getElementById("tWurf").children[0].children[3].children[6].innerHTML = "serviert";
     else
-        document.getElementById("tWurf").children[0].children[3].children[6].innerHTML = "nicht serviert";
+        document.getElementById("tWurf").children[0].children[3].children[6].innerHTML = "unserv.";
 }
 
 function feldclick(rnr, snr) {
@@ -213,7 +214,7 @@ function ErgebnisBerechnen() {
             document.getElementById("tZettel").children[0].children[6].children[ii].innerHTML = Summe;
             document.getElementById("tZettel").children[0].children[6].children[ii].style.visibility = "visible";
         }
-        
+    document.getElementById("tZettel").children[0].children[6].children[6].style.visibility = "visible";
         for (let jj = 6; jj < 15; jj++) {
             let Summe = 0;
             for (let ii = 1; ii < 6; ii++)

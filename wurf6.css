@@ -10,12 +10,12 @@
 }
 
 #tZettel td {
-    border-style: solid;      
+        border-style: solid;
+        width: 14%;
 }
 
 #tWurf td {
     border-style: solid;
-    width: 14%;    
 }
 
 #ic1 {

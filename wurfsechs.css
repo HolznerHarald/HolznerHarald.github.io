@@ -10,7 +10,8 @@
 
     #tZettel td {
         border-style: solid;
-        width: 14%;
+        min-width: 10%;
+        width: 10%;
     }
 
 #tWurf {
