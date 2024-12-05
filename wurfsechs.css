@@ -17,10 +17,11 @@
 #tWurf {
     width: 80%;
 }
-#tWurf td {
-    border-style: solid;
-    width: 14%;    
-}
+    #tWurf td {
+        border-style: solid;
+        min-width: 14%;
+        width: 14%;
+    }
 
 #ic1 {
     display: block;

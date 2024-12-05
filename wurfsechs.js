@@ -301,6 +301,7 @@ function formate() {
         //document.getElementById("tZettel").children[0].children[2].children[jj].style.borderBottomStyle = "double";
         
     }
+    
 
     
     let hh = hoehe * 0.7 + "px";
@@ -377,6 +378,11 @@ let Weite = window.innerWidth;
 let Handy = true;
 if (Weite > hoehe) {
     Handy = false;
+}
+
+if (Handy) {
+    document.getElementById("tZettel").style.width = Weite * 0.9 + "px";
+    document.getElementById("tWurf").style.width = Weite * 0.9 + "px";
 }
 
 let glAnz1 = 0
