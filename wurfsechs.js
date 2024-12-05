@@ -47,7 +47,7 @@ function nextthrow() {
     document.getElementById("tWurf").children[0].children[2].children[6].style.visibility = "visible";
 
     for (let ii = 0; ii < 6; ii++) {
-        document.getElementById("tWurf").children[0].children[3].children[ii].innerHTML = "unfixed";
+        document.getElementById("tWurf").children[0].children[3].children[ii].innerHTML = "unfix";
         document.getElementById("tWurf").children[0].children[2].children[ii].style.background = "white";
         document.getElementById("tWurf").children[0].children[2].children[ii].innerHTML = rand6();
     }
@@ -66,7 +66,7 @@ function nextsubthrow() {
         document.getElementById("tWurf").children[0].children[2].children[6].style.visibility = "hidden";
     let serviert = true;
     for (let ii = 0; ii < 6; ii++) {
-        if (document.getElementById("tWurf").children[0].children[3].children[ii].innerHTML == "unfixed")
+        if (document.getElementById("tWurf").children[0].children[3].children[ii].innerHTML == "unfix")
             document.getElementById("tWurf").children[0].children[2].children[ii].innerHTML = rand6();
         else
             serviert = false
@@ -320,7 +320,7 @@ function init() {
     document.getElementById("tWurf").children[0].children[2].children[6].style.visibility = "hidden";
     //unfixed
     for (let ii = 0; ii < 6; ii++) {
-        document.getElementById("tWurf").children[0].children[3].children[ii].innerText = "unfixed";       
+        document.getElementById("tWurf").children[0].children[3].children[ii].innerText = "unfix";       
     }
     // 1., letzte grau, sonst weiß
     for (let ii = 1; ii < 6; ii++) {
@@ -333,12 +333,12 @@ function init() {
     }
 }
 function tWurfclick(num) {
-    if (document.getElementById("tWurf").children[0].children[3].children[num-1].innerHTML == "unfixed") {
+    if (document.getElementById("tWurf").children[0].children[3].children[num-1].innerHTML == "unfix") {
         document.getElementById("tWurf").children[0].children[3].children[num - 1].innerHTML = "fixed";
         document.getElementById("tWurf").children[0].children[2].children[num - 1].style.background = "green";
     }
     else {
-        document.getElementById("tWurf").children[0].children[3].children[num - 1].innerText = "unfixed";
+        document.getElementById("tWurf").children[0].children[3].children[num - 1].innerText = "unfix";
         document.getElementById("tWurf").children[0].children[2].children[num - 1].style.background = "white";
     }
 }
@@ -378,11 +378,6 @@ let Weite = window.innerWidth;
 let Handy = true;
 if (Weite > hoehe) {
     Handy = false;
-}
-
-if (Handy) {
-    document.getElementById("tZettel").style.width = Weite * 0.9 + "px";
-    document.getElementById("tWurf").style.width = Weite * 0.9 + "px";
 }
 
 let glAnz1 = 0
